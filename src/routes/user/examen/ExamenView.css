@@ -1,0 +1,63 @@
+.examen-view-container {
+    max-width: 600px; /* Ajusta este valor según necesites */
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .question-text {
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    margin-bottom: 20px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre botones */
+  }
+  
+  button {
+    border-radius: 20px; /* Botones con bordes redondeados */
+    padding: 5px 15px; /* Espaciado interno de los botones */
+  }
+  
+  .continue-button {
+    display: block; /* Hace que el botón sea un bloque para ancho completo */
+    width: 100%;
+    margin-top: 20px;
+    background-color: #007bff; /* Color de fondo del botón 'Continuar después' */
+    color: white; /* Color del texto del botón 'Continuar después' */
+    border-radius: 20px; /* Borde redondeado para el botón 'Continuar después' */
+    border: none;
+  }
+  
+  .continue-button:hover {
+    background-color: #0056b3; /* Color de fondo del botón 'Continuar después' al pasar el mouse */
+  }
+  
+  /* Agregar un media query para manejar vistas más pequeñas */
+  @media (max-width: 768px) {
+    .examen-view-container {
+      margin: 10px;
+      padding: 10px;
+    }
+  
+    .button-group {
+      flex-direction: column; /* Los botones se apilan verticalmente en pantallas pequeñas */
+    }
+  
+    button {
+      width: 100%; /* Los botones se expanden para ocupar todo el ancho */
+      margin-bottom: 5px;
+    }
+}  

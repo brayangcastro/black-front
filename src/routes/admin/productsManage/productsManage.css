@@ -1,0 +1,173 @@
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Mejora la apariencia de los botones */
+.button, .quantity-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button:hover, .quantity-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Alinea correctamente los elementos dentro de cada celda de la tabla */
+.table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Estilos específicos para los inputs */
+.input-number, .quantity-input {
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+}
+
+/* Mejoras visuales para la tabla */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    border-bottom: none;
+}
+
+.table tbody td {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Estilos para la sección de notas */
+.note-input {
+    max-width: 100%; /* Asegura que el campo de notas no se desborde */
+    box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el ancho total */
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Añade un pequeño espacio entre los botones y el campo de notas */
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 5px; /* Añade un pequeño espacio entre los elementos */
+}
+
+.quantity-btn {
+    width: 30px; /* Anchura fija para los botones */
+    height: 30px; /* Altura fija para los botones */
+    line-height: 30px; /* Asegura que el texto (+/-) esté centrado verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ced4da; /* Borde para que coincida con el estilo del input */
+    background-color: #f8f9fa; /* Color de fondo para que coincida con el estilo general */
+    color: #495057; /* Color del texto */
+    cursor: pointer;
+    border-radius: 0.25rem; /* Bordes redondeados */
+}
+
+.quantity-btn:hover {
+    background-color: #e9ecef; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.quantity-input {
+    width: 50px; /* Reduce el ancho del input para hacerlo más compacto */
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem; /* Ajusta el padding para que el input no sea demasiado alto */
+}
+
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Permite desplazamiento horizontal solo si es necesario */
+    }
+
+    .table td, .table th {
+        display: block; /* Hace que las celdas de la tabla se muestren como bloques */
+        width: 100%;
+    }
+}
+
+ 
+
+.pie-orden {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Centra el pie de la orden */
+    transform: translateX(-50%); /* Centra el pie de la orden */
+    width: 50%; /* Ajusta este valor según el ancho de tu columna */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between; /* Asegura que el total y el botón estén en los extremos */
+    align-items: center;
+}
+
+.fixed-bottom {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+
+.order-column {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ajusta la altura al 100% de la pantalla */
+    overflow: hidden; /* Evita el desbordamiento fuera de la columna */
+}
+
+.order-container {
+    flex: 1;
+    overflow-y: auto; /* Permite desplazamiento si el contenido excede la altura */
+    max-height: calc(100vh - 250px); /* Ajusta este valor según el espacio que quieras */
+   
+}
+
+.order-footer {
+    background: #fff; /* Estilización del pie de la orden */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra para dar sensación de profundidad */
+}
+
+
+.order-column {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.orden-container {
+    overflow-y: auto;
+    flex-grow: 1; /* Esto permite que el contenedor tome el espacio máximo disponible, empujando el footer al fondo */
+}
+
+.order-footer {
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    bottom: 0;
+}

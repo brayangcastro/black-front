@@ -1,0 +1,41 @@
+/* En tu archivo CSS, o dentro de una etiqueta <style> si estás trabajando directamente en JSX */
+.chat-messages {
+    max-height: 300px; /* Ajusta a tus necesidades */
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0; /* Color de fondo ligero para los mensajes */
+    border-radius: 5px;
+}
+
+/* ConversManage.css o el archivo CSS correspondiente */
+.chat-message-incoming {
+    background-color: #DCF8C6; /* Verde claro para mensajes entrantes */
+    text-align: left;
+    margin-right: auto;
+    margin-left: 10px;
+  }
+  
+  .chat-message-outgoing {
+    background-color: #ECECEC; /* Gris claro para mensajes salientes */
+    text-align: right;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+  .chat-message {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 80%;
+  }
+
+.chat-input {
+    display: flex;
+    align-items: center;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    margin-right: 10px;
+}

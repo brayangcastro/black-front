@@ -1,0 +1,323 @@
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Mejora la apariencia de los botones */
+.button, .quantity-btn {
+   
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button:hover, .quantity-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Alinea correctamente los elementos dentro de cada celda de la tabla */
+.table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Estilos específicos para los inputs */
+.input-number, .quantity-input {
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+}
+
+/* Mejoras visuales para la tabla */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    border-bottom: none;
+}
+
+.table tbody td {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Estilos para la sección de notas */
+.note-input {
+    max-width: 100%; /* Asegura que el campo de notas no se desborde */
+    box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el ancho total */
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 3px; /* Añade un pequeño espacio entre los botones y el campo de notas */
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 3px; /* Añade un pequeño espacio entre los elementos */
+}
+
+.quantity-btn {
+    width: 20px; /* Anchura fija para los botones */
+    height: 30px; /* Altura fija para los botones */
+    line-height: 30px; /* Asegura que el texto (+/-) esté centrado verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ced4da; /* Borde para que coincida con el estilo del input */
+    background-color: #f8f9fa; /* Color de fondo para que coincida con el estilo general */
+    color: #495057; /* Color del texto */
+    cursor: pointer;
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.quantity-btn:hover {
+    background-color: #e9ecef; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.quantity-input {
+    width: 50px; /* Reduce el ancho del input para hacerlo más compacto */
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem; /* Ajusta el padding para que el input no sea demasiado alto */
+}
+
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Permite desplazamiento horizontal solo si es necesario */
+    }
+
+    .table td, .table th {
+        display: block; /* Hace que las celdas de la tabla se muestren como bloques */
+        width: 100%;
+    }
+}
+
+ 
+
+.pie-orden {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Centra el pie de la orden */
+    transform: translateX(-50%); /* Centra el pie de la orden */
+    width: 50%; /* Ajusta este valor según el ancho de tu columna */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between; /* Asegura que el total y el botón estén en los extremos */
+    align-items: center;
+}
+
+.fixed-bottom {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a4e69; /* Fondo oscuro */
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.order-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(47, 134, 0);
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #22223b; /* Color de fondo del pie de la orden */
+}
+
+.total-venta {
+    margin-bottom: 10px;
+    color: rgb(47, 134, 0);
+    font-size: 16px;
+}
+
+.botones-accion .btn {
+    margin: 5px; /* Espaciado entre botones */
+}
+
+/* Estilos específicos para los botones, ajusta los colores según necesites */
+.botones-accion .btn-info {
+    background-color: #17a2b8; /* ABRIR */
+}
+
+.botones-accion .btn-primary {
+    background-color: #007bff; /* IMPRIMIR */
+}
+
+.botones-accion .btn-success {
+    background-color: #28a745; /* PAGAR */
+}
+
+.botones-accion .btn-secondary {
+    background-color: #6c757d; /* DESECHABLE */
+}
+
+.order-details {
+    border: 1px solid #ccc; /* Contorno para la sección de detalles */
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* mesasManage.css */
+.col-7-custom {
+    width: 14% !important;
+    float: left;
+    padding: 0.5rem; /* Ajuste de acuerdo a tus necesidades */
+}
+
+
+/* mesasManage.css */
+.btn.mesa-libre {
+    background-color: rgb(166, 166, 166);
+  }
+  
+  .mesa-esperando {
+    background-color: rgb(199, 50, 51);
+  }
+  
+  .btn.mesa-pedido {
+    background-color: rgb(0, 142, 204);
+  }
+  
+  .mesa-preparado {
+    background-color: rgb(254, 205, 60);
+  }
+  
+  .btn.mesa-pagando {
+    background-color: rgb(0, 186, 98);
+  }
+  
+  .mesa-reservado {
+    background-color: rgb(110, 36, 164);
+  }
+  
+  .mesa-pagado {
+    background-color: rgb(251, 108, 255);
+  }
+  
+  .mesa-procesando {
+    background-color: rgb(177, 124, 25);
+  }
+
+
+  .btn.mesa-procesando {
+    background-color: rgb(177, 124, 25);
+  }
+  
+  .mesa-cancelacion {
+    background-color: rgb(177, 124, 25);
+  }
+  
+  .mesa-cancelacion-p {
+    background-color: rgb(177, 78, 25);
+  }
+  
+
+
+  /* Alinear a la izquierda los botones de las secciones */
+.botones-seccion {
+    text-align: left; /* O podrías usar justify-content-start si es un flex container */
+}
+
+/* Tarjeta de Mesa Estilo Moderno */
+.btn-mesa {
+    display: block;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+    color: #fff!important; /* Color del texto */
+}
+
+.btn-mesa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    color: #fff!important; /* Color del texto */
+}
+
+/* Tamaño y claridad del texto dentro de las tarjetas de mesa */
+.btn-mesa .mesa-info {
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Peso del texto */
+    color: #fff!important; /* Color del texto */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Sombra para mejorar contraste */
+}
+
+/* Iconos del estado de la mesa */
+.mesa-icono {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 768px) {
+    .col-7-custom {
+        width: 100% !important;
+        padding: 0.5rem;
+    }
+    .btn-mesa {
+        margin-bottom: 0.5rem;
+        color: #fff!important; /* Color del texto */
+    }
+}
+
+
+/* Asegura que el texto dentro de los botones de las mesas sea blanco */
+.btn-mesa, .btn-mesa .mesa-info {
+    color: #fff !important; /* Asegura que el color sea blanco */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Sombra para mejorar la legibilidad */
+}
+
+/* Además, asegúrate de que los estados de hover también tengan el color correcto */
+.btn-mesa:hover, .btn-mesa:hover .mesa-info {
+    color: #fff !important;
+}
+
+
+/* Estilos para los botones de acción de la mesa */
+.mesa-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0px; /* Espacio entre botones */
+    padding-top: 0px; /* Espacio sobre los botones */
+  }
+  
+  .mesa-action-btn {
+    border: none;
+    background-color: transparent;
+    color: white; /* Cambia esto según el color de fondo de tus botones */
+    cursor: pointer;
+  }
+  
+  .mesa-action-btn:hover {
+    color: #ccc; /* Cambia esto según tus preferencias de hover */
+  }
+  

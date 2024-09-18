@@ -1,0 +1,32 @@
+/* Bracket.css */
+.bracket {
+    display: flex;
+    justify-content: space-between; /* Ajusta las rondas horizontalmente */
+  }
+  
+  .bracket-round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .bracket-match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .team {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    /* Ajusta el ancho según necesites para que todos los equipos tengan un ancho uniforme */
+    width: 120px; /* Ejemplo de ancho fijo */
+    text-align: center;
+  }
+  
+  .team.winner {
+    border-color: gold;
+  }
+  

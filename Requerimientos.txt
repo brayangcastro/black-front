@@ -1,0 +1,48 @@
+Venta y Reportes de Tickets:
+
+Venta de un día a determinado día:
+Configurar la venta para un día específico y corregir tickets si es necesario.
+Reporte por producto vendido por rango de fecha:
+Implementar un sistema de reportes que muestre los productos vendidos en un rango de fechas determinado.
+Venta por rango de fecha:
+Permitir la venta de productos dentro de un rango de fechas específico.
+
+Gestión de Tickets:
+
+Captura de Detalles:
+Capturar el precio y la descripción del producto en el momento de la venta.
+Impresión de Tickets:
+Opción para imprimir o no imprimir el ticket.
+Cancelación de Tickets:
+Permitir la cancelación de tickets pero registrando la cancelación.
+Reporte de Tickets Cancelados:
+Generar reportes de tickets cancelados por rango de fecha.
+Gestión de Inventario:
+
+Comentarios sobre Artículos:
+Opción para guardar comentarios de artículos que no hubo venta.
+Control de Temporadas:
+Identificar y pedir artículos necesarios para temporadas específicas.
+Descuentos Especiales:
+Implementar descuentos especiales para compras por debajo de cierto costo, con opción de comentario.
+Control de Productos Específicos:
+
+Control de Especies y Semillas:
+Opción especial para controlar la venta de especies y semillas.
+Reportes por Fecha:
+Generar reportes de ciertos productos por fecha, especialmente para especies y semillas.
+Alertas y Notificaciones:
+
+Alertas de Ventas:
+Aviso cuando la venta de un producto supere los $5000.
+Gestión de Clientes:
+
+Control de Clientes:
+Controlar ciertos clientes, sus compras y generar reportes históricos.
+Reportes con Clave:
+Generar algunos reportes protegidos con clave de acceso.
+Notas y Comentarios:
+
+
+Comentarios Diarios:
+Implementar un sistema para añadir comentarios diarios sobre los días festivos y otros eventos relevantes.

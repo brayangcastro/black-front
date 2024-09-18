@@ -1,0 +1,178 @@
+.chatbot-container {
+    color: #fff;
+    background-color: #333;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+}
+
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status-indicator {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-indicator.active {
+    background-color: #4CAF50;
+}
+
+.status-indicator.inactive {
+    background-color: #f44336;
+}
+
+/* Continúa con los estilos para last-conversation, user-counter, chatbot-activity, chat-area, etc. */
+/* ...estilos existentes... */
+
+.user-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.chatbot-msg {
+    background-color: #444;
+}
+
+.user-msg {
+    background-color: #555;
+}
+
+.timestamp {
+    display: block;
+    font-size: 0.8em;
+    color: #999;
+}
+.chatbot-container {
+    display: flex;
+    flex-wrap: nowrap; /* Asegurarse de que no se envuelva */
+    height: auto !important;
+  }
+  
+  .user-list,
+  .conversation {
+    height: auto; /* o la altura que prefieras */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+  }
+  
+  .user-list {
+    height: auto;
+    margin-right: 20px; /* Separación entre las listas */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+  }
+  
+  .messages {
+    max-height: calc(100vh - 200px); /* Ajusta según tu layout */
+    
+    padding-bottom: 50px; /* Espacio extra para el input de nuevo mensaje */
+}
+
+.message-input {
+  width: calc(100% - 120px); /* Ajusta el ancho para dejar espacio para el botón */
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px !important; /* Bordes redondeados a la izquierda */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.message-input:focus {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más profunda al enfocar */
+}
+
+/* Estilos para el botón de enviar */
+.send-button {
+  width: 100px; /* Ancho fijo para el botón */
+  border: none;
+  border-radius: 0 4px 4px 0 !important; /* Bordes redondeados a la derecha */
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el ratón por encima */
+}
+
+/* Estilos para la sección de nueva mensaje */
+.new-message {
+  display: flex;
+  align-items: stretch; /* Alinea verticalmente la entrada de texto y el botón */
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para la barra de entrada de mensaje */ 
+}
+
+/* Asegúrate de que el contenedor de mensajes tenga un padding inferior adecuado */
+.messages {
+  padding-bottom: 60px; /* Espacio para la nueva sección de mensaje */
+  margin-bottom: -50px; /* Ajustar según sea necesario */
+}
+
+
+.active-user {
+    background-color: #666; /* O el color que prefieras para el usuario activo */
+    color: #fff;
+}
+
+.chatbot-msg {
+    background-color: #444; /* Color para los mensajes del chatbot */
+    text-align: left;
+}
+
+.user-msg {
+    background-color: #555; /* Color para los mensajes del usuario */
+    text-align: right;
+}
+
+/* Estilos para el contenedor del resumen */
+.resumen-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px; /* Ajusta esto según tus necesidades */
+  }
+  
+  /* Estilos para los ítems del resumen */
+  .resumen-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #4a4a4a; /* Color neutro para el texto */
+  }
+  
+  /* Iconos */
+  .resumen-item svg {
+    width: 30px; /* Ajusta el tamaño de los iconos */
+    height: auto;
+    color: #1ab1de; /* Un color distintivo para los iconos */
+  }
+
+  .toggle-connection-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1ab1de;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-connection-btn:hover {
+    background-color: #1ab1de80;
+  }
+
+  h5 {
+    color: white !important;
+  }

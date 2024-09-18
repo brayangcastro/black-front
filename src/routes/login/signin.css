@@ -1,0 +1,32 @@
+.btn-shopify {
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  
+  .btn-shopify:hover {
+    color: #007bff;
+    background-color: #e7e7e7;
+    border-color: #d1d1d1;
+  }
+  
+  .btn-shopify:active {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #005cbf;
+  }
+  
+  /* Si deseas que el botón sea un poco más distintivo, puedes agregar una sombra */
+  .btn-shopify {
+    box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, .5);
+  }
+  
+  .btn-shopify:hover {
+    box-shadow: 0 0.5rem 1rem rgba(108, 117, 125, .5);
+  }
+  

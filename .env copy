@@ -1,0 +1,12 @@
+VITE_APP_LOCAL_IP=http://localhost:3001
+VITE_APP_LOCALHOST=http://localhost
+#VITE_APP_LOCAL_IP=https://neerdvocacional.org/api
+
+VITE_APP_ABRIR_CAJON=http://localhost/Neerd-back/app/models/php/Abrir_cajon.php
+
+VITE_APP_PHP=http://localhost/Neerd-back/app/models/php/
+VITE_APP_IMPRIMIR_TICKET=http://localhost/Neerd-back/app/models/php/Imprimir_ticket_pos.php
+
+VITE_APP_URL_PRODUCTOS= http://localhost/magico-back/img/productos/ 
+ 
+VITE_BASENAME="/"

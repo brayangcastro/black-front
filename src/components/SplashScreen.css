@@ -1,0 +1,44 @@
+/* SplashScreen.css */
+.splash-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 10; /* Asegúrate de que esté por encima de todo lo demás */
+  }
+  
+  .logo-animation {
+    width: 1em;
+    height: 1em;
+    background: url('logo.png') no-repeat center center; /* Asegúrate de poner la ruta correcta a tu logo */
+    background-size: contain;
+    animation: growLogo 3s forwards;
+  }
+  
+  .title-animation {
+    animation: fadeInOut 3s forwards;
+  }
+  
+  @keyframes growLogo {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(50); /* Ajusta esto según el tamaño inicial de tu logo */
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  

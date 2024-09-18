@@ -1,0 +1,337 @@
+/* CarouselStyles.css */
+.carousel-container {
+  width: 960px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.question-title {
+  display: flex;
+  font-size: 26px; 
+  padding: 10px 20px;
+  margin: 30px 0px;
+  justify-content: center;
+}
+.question-indicador {
+  display: flex;
+  font-size: 14px; 
+  padding: 15px 0px;
+  margin: 10px 0px;
+  justify-content: right;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite múltiples líneas */
+  justify-content: center; /* Asegura que los elementos estén centrados */
+  margin: 10px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+
+.option-button {
+  border: none;
+  background-color: #e7f3ff;
+  color: #007bff;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+.options-botones {
+  display: flex; /* Activa Flexbox */
+  justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+  align-items: center; /* Alinea los elementos verticalmente */
+  padding: 10px; /* Agrega algo de padding alrededor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+.option-button:hover {
+  background-color: #cfe2ff;
+}
+
+.option-button:focus,
+.option-button:active {
+  background-color: #007bff;
+  color: white;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 8px;
+  width: 30%; /* This should be dynamic based on the progress */
+}
+
+/* CarouselStyles.css */
+/* ... otros estilos ... */
+
+/* Estilos para los botones de navegación */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button:active {
+  background-color: #003a75;
+}
+
+.option-button.selected {
+  background-color: #28a745; /* Un tono de verde estándar */
+  color: white;
+}
+
+/* CarouselStyles.css */
+/* ... otros estilos ... */
+
+/* Estilos para móviles y pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-container {
+    width: auto; /* Hacer que el contenedor sea del ancho de la pantalla */
+    padding: 10px; /* Reducir el padding */
+  }
+
+  .question-title {
+    font-size: 22px; /* Reducir el tamaño de la fuente para títulos de preguntas */
+  }
+
+  .options-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las opciones se ajusten en filas adicionales */
+    justify-content: center;
+    margin: 20px 0;
+    max-height: 300px; /* Ajusta este valor según tus necesidades */
+    overflow-y: auto; /* Permite desplazamiento vertical si se excede la altura máxima */
+  }
+  
+
+  .option-button {
+    padding: 8px 16px; /* Ajustar el padding de los botones */
+    margin: 5px; /* Reducir el margen entre botones */
+    width: 100%; /* Hacer que los botones ocupen el ancho completo */
+    max-width: 300px; /* Pero limitar su ancho máximo */
+  }
+
+  .navigation-buttons {
+    flex-direction: column; /* Apilar botones de navegación verticalmente */
+  }
+
+  .button {
+    width: 100%; /* Hacer que los botones de navegación ocupen el ancho completo */
+    margin-bottom: 10px; /* Añadir margen abajo para separar los botones */
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #000; /* Cambiar el color de las flechas del carrusel */
+  }
+}
+
+.navigation-buttons-top {
+  display: flex;
+  justify-content: space-between;
+  position: relative; /* Cambia a 'fixed' si quieres que sea fijo en la pantalla */
+  top: 20px; /* Ajusta según tu diseño */
+  left: 50%; /* Centra los botones en la pantalla */
+  transform: translateX(-50%); /* Asegura el centrado independientemente del ancho del contenedor */
+  z-index: 1000; /* Asegúrate de que estén sobre otros elementos */
+  width: auto; /* Permite que el contenedor se ajuste al tamaño de los botones */
+}
+
+.button.prev-button-top, .button.next-button-top {
+  font-size: 14px; /* Disminuye el tamaño de la fuente para íconos más pequeños */
+  color: #007bff; /* Color primario sutil */
+  background-color: transparent; /* Fondo transparente para un aspecto más limpio */
+  border: 1px solid #007bff; /* Borde sutil */
+  border-radius: 15px; /* Bordes redondeados para un aspecto más moderno */
+  padding: 5px 10px; /* Reducir el padding para botones más pequeños */
+  margin: 0 5px; /* Margen reducido entre botones */
+  width: auto; /* Ancho automático basado en el contenido */
+  height: auto; /* Altura automática basada en el contenido */
+}
+
+.button.prev-button-top:hover, .button.next-button-top:hover {
+  background-color: #007bff; /* Color de fondo al pasar el mouse */
+  color: white; /* Color de texto al pasar el mouse */
+  opacity: 0.7; /* Transparencia para un efecto moderno */
+}
+
+/* Ajusta la transición para que sea suave */
+.button.prev-button-top, .button.next-button-top {
+  transition: all 0.3s ease;
+}
+
+
+/* Estilos para el botón "Continuar después..." */
+.button.continue-later-button {
+  width: auto;
+  margin-left: auto; /* Esto empujará el botón a la derecha */
+  padding: 5px 15px;
+  font-size: 14px;
+  color: #555; /* Un color más sutil que el azul principal */
+  background-color: transparent;
+  border: 1px solid #ccc; /* Un borde más sutil */
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.button.continue-later-button:hover {
+  background-color: #f8f9fa; /* Un fondo ligeramente diferente para el hover */
+  border-color: #007bff; /* Cambio de color de borde al pasar el mouse */
+  color: #007bff;
+}
+
+.intro-container {
+  padding-top: 20px; /* Agrega espacio en la parte superior */
+}
+
+.question-number-label {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px; /* Ajusta el margen según sea necesario */
+}
+
+/* CSS para hacer que el área de texto sea responsiva */
+.text-answer-area {
+  width: 100%; /* Ocupa el ancho completo de su contenedor */
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+  min-height: 150px; /* Altura mínima */
+  resize: vertical; /* Permite al usuario ajustar verticalmente si lo desea */
+}
+
+@media (max-width: 768px) { /* Para pantallas más pequeñas, como tablets */
+  .text-answer-area {
+    padding: 10px; /* Más padding para que sea más fácil de escribir */
+  }
+}
+
+@media (max-width: 480px) { /* Para pantallas más pequeñas, como móviles */
+  .text-answer-area {
+    padding: 5px; /* Ajusta el padding para pantallas muy pequeñas */
+  }
+}
+@media (max-width: 768px) {
+  .options-container {
+    flex-direction: column;
+    align-items: center; /* Centra los elementos cuando están en columna */
+  }
+}
+
+
+ 
+
+/* Puedes ajustar estos estilos según tus necesidades */
+
+
+/* Estilos para los selectores */
+.select-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.select-container select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: white; /* Fondo blanco */
+  font-size: 16px; /* Tamaño de letra adecuado */
+  color: #333; /* Color de texto oscuro para contraste */
+  -webkit-appearance: none; /* Desactivar estilo por defecto en WebKit */
+  -moz-appearance: none; /* Desactivar estilo por defecto en Firefox */
+  appearance: none; /* Desactivar estilo nativo */
+  position: relative;
+   background-repeat: no-repeat;
+  background-position: right 10px center; /* Posición del ícono a la derecha */
+  background-size: 20px 20px; /* Tamaño del ícono de la flecha */
+}
+
+/* Estilos para el label del selector */
+.select-container label {
+  font-weight: bold;
+  color: #333;
+}
+ 
+ 
+.selects-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el botón debajo de los selectores */
+  gap: 10px; /* Espacio entre los selectores y el botón */
+}
+.selectors-container {
+  display: flex;
+  flex-direction: row; /* Alinea los selectores en línea */
+  gap: 10px; /* Espacio entre los selectores */
+  flex-wrap: wrap; /* Permite que los selectores se envuelvan en pantallas pequeñas */
+}
+/* Media query para ajustar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .selects-wrapper {
+    flex-direction: column;
+  }
+  
+  .select-container select {
+    width: 100%; /* Aprovecha todo el ancho en móviles */
+  }
+}
+
+
+.button {
+  background-color: #007bff; /* Color azul, por ejemplo */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Un azul más oscuro para el hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para el hover */
+}
+
+.button:active {
+  background-color: #004085; /* Azul aún más oscuro para cuando está activo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Vuelve a la sombra original */
+}
+
+.button:disabled {
+  background-color: grey; /* Color cuando está deshabilitado */
+  color: #ccc;
+  cursor: not-allowed; /* Cambia el cursor para indicar que el botón está deshabilitado */
+}

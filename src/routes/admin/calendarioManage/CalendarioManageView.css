@@ -1,0 +1,336 @@
+/* src/components/CalendarioManageView.css */
+/* Importar una fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+/* Estilos generales del calendario */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.new-event-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.new-event-btn:hover {
+    background-color: #218838;
+}
+
+.search-input {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.status-filter {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.events-table th, .events-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.events-table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+.events-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.events-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.action-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #0056b3;
+}
+
+.action-btn.delete-btn {
+    background-color: #dc3545;
+}
+
+.action-btn.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.table-manage-view h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.table-manage-view select,
+.table-manage-view input {
+    margin-right: 10px;
+}
+
+/* Encabezado de navegación */
+.nav-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav-header .view-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.nav-header .view-buttons button {
+    background-color: #ffffff;
+    color: #333;
+    border: 2px solid #007bff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.nav-header .view-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-header .view-buttons button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.nav-header .date-display {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.nav-header .nav-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-header .nav-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-header .nav-button:hover {
+    background-color: #0056b3;
+}
+
+.nav-header .nav-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Estilos generales del calendario */
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Nunito', sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #e1e1e1;
+    padding: 12px 15px;
+    text-align: center;
+    color: #333;
+}
+
+.calendar-table th {
+    background-color: #f8f8f8;
+    color: #222;
+    font-weight: 600;
+}
+
+.calendar-table td {
+    height: 60px;
+    transition: background-color 0.3s;
+}
+
+.calendar-table td:hover {
+    background-color: #f4f4f4;
+}
+
+.event {
+    padding: 4px;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+
+.event.confirmado {
+    background-color: #28a745;
+}
+
+.event.pendiente {
+    background-color: #ffc107;
+}
+
+.event.finalizado {
+    background-color: #6c757d;
+}
+
+.event.cancelado {
+    background-color: #dc3545;
+}
+
+.event.reservado {
+    background-color: #fc40e3;
+}
+
+.legend {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.confirmado { background-color: #28a745; }
+.pendiente { background-color: #ffc107; }
+.finalizado { background-color: #6c757d; }
+.cancelado { background-color: #dc3545; }
+.reservado { background-color: #460843; }
+
+.capacity-info {
+    font-size: 0.8em;
+    color: #666;
+    padding-top: 5px;
+}
+
+.gestion-fechas-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gestion-fechas-container label {
+    margin-right: 10px;
+}
+
+.gestion-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.modern-button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.blue-button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+}
+
+.blue-button:hover {
+    background-color: #0056b3;
+}
+
+.gold-button {
+    margin-top: -10px;
+    background-color: #ffc107;
+    color: #333;
+}
+
+.gold-button:hover {
+    background-color: #e0a800;
+    color: white;
+}
+
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según el tamaño del contenedor */
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ajusta esto según el tamaño del contenedor */
+}
+
+.add-event {
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 10;
+    background-color: #f8f9fa;
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}

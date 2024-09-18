@@ -1,0 +1,79 @@
+
+/* CambioModal.css */
+.modal-content {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    border-radius: 20px;
+    border: none;
+  }
+  
+  .modal-body {
+    position: relative;
+    padding: 40px 20px;
+  }
+  
+  .close-icon {
+    color: #ff6666;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+  }
+  
+  h2 {
+    color: #4CAF50; /* Verde para el título 'Cambio' */
+    margin-bottom: 30px;
+  }
+  
+  .cambio-amount {
+    background-color: #333!important;
+    padding: 20px;
+    font-size: 28px!important;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .cambio-amount.cambio {
+    background-color: #4CAF50!important; /* Verde para el cambio */
+    margin-bottom: 30px!important;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+    
+  }
+  
+  p {
+    margin: 0!important;
+    color: #aaa!important;
+  }
+  
+  .timestamp {
+    font-size: 16px!important;
+    color: #f8c471!important; /* Color más claro y cálido para la fecha */
+    margin-top: 15px!important;
+    margin-bottom: 30px!important;
+    font-weight: bold!important;
+  }
+  
+  .btn-salir, .btn-facturar {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .btn-facturar {
+    background-color: #333;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+  }
+  
+  .btn-facturar:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  

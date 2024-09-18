@@ -1,0 +1,102 @@
+.payment-container {
+    max-width: 500px; /* Adjust the width to match the order detail panel */
+    margin: auto; /* Center the container */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.payment-button {
+    background-color: #007bff; /* A vibrant blue for primary actions */
+    border: none;
+    color: white;
+    padding: 8px 6px; /* Reduced padding */
+    margin: 3px; /* Reduced margin */
+    border-radius: 4px; /* Rounded corners but not too round */
+    font-size: 14px; /* Smaller font size for a more refined look */
+    transition: background-color 0.3s ease; /* Smooth transition for interactions */
+    width:  105px; /* Auto width to allow for padding to define size */
+    height: 60px; /* Fixed height for uniformity */
+    min-height: 60px; /* Adjust the height for a better look */
+}
+
+.payment-button:not(.wide) {
+    width: 85px; /* Specific width for number buttons */
+   
+}
+
+.payment-button.wide {
+    width: 130px; /* Double width for action buttons like 'Pagar' and 'Reset' */
+}
+
+.payment-button:hover {
+    background-color: #1073dd; /* Slightly darker blue on hover for interaction feedback */
+}
+
+.payment-button:active {
+    background-color: #004085; /* Even darker blue on click for a pressed effect */
+}
+
+.payment-button.reset {
+    background-color: #dc3545; /* A distinct red for resetting actions */
+}
+
+.payment-button.reset:hover {
+    background-color: #c82333;
+}
+
+.payment-input-group {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+
+.payment-input {
+    flex: 1; /* The input will grow to take up available space */
+    margin-right: 10px; /* Spacing between input and button */
+}
+
+.payment-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:5px;
+    margin-top: 10px;
+}
+.total-change-display {
+    text-align: left; /* Align text to the left for readability */
+    margin-top: 15px; /* Spacing above the totals */
+}
+
+
+.totals-display {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem; /* Makes the text larger */
+    font-weight: bold; /* Makes the text bold */
+    color: #007bff; /* Color that stands out */
+    background-color: #f8f9fa; /* Light background for the totals area */
+    border-radius: 5px; /* Rounded corners for the totals area */
+    padding: 10px 0; /* Padding for top and bottom */
+    margin-bottom: 10px; /* Spacing below the totals area */
+}
+
+.payment-button.reset {
+    background-color: #dc3545; /* A strong color for reset/cancel actions */
+    color: white;
+}
+
+
+.payment-button.method.has-amount {
+    /* Styles for buttons with an amount entered */
+    background-color: #28a745; /* Green indicates amount entered */
+    color: white;
+}
+
+.payment-button.method.selected {
+    /* Styles for the selected method */
+    background-color: #17a2b8; /* Blue indicates selection */
+    color: white;
+}

@@ -1,0 +1,53 @@
+.user-management-container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Un fondo claro */
+  }
+  
+  .user-summary-section, .user-actions, .user-search-section {
+    margin-bottom: 20px;
+  }
+  
+  .user-totals h5, .user-actions button {
+    margin-bottom: 10px;
+  }
+  
+  .user-chart div {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .btn-accion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px; /* Botones con bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para botones */
+    transition: all 0.2s ease; /* Transición suave para efectos de hover */
+  }
+  
+  .btn-accion:hover {
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+  }
+  
+  .icon-excel {
+    width: 24px; /* Tamaño fijo para los iconos */
+    margin-right: 5px;
+  }
+  
+  .search-input {
+    border-radius: 20px; /* Campo de búsqueda con bordes redondeados */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna suave */
+    padding: 10px 15px; /* Espaciado interno adecuado */
+  }
+  
+  /* Ajusta las media queries según tus puntos de ruptura */
+  @media (max-width: 768px) {
+    .user-actions {
+      flex-direction: column;
+    }
+  
+    .btn-accion {
+      width: 100%; /* Botones de ancho completo en móviles */
+      margin-bottom: 10px;
+    }
+  }
+  

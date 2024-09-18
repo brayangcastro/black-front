@@ -1,0 +1,169 @@
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Mejora la apariencia de los botones */
+.button, .quantity-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button:hover, .quantity-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para todas las celdas de la tabla para mantener la consistencia y reducir el espacio */
+.table td, .table th {
+    padding: 5px; /* Establece un padding menor para todas las celdas */
+    vertical-align: middle; /* Asegúrate de que el contenido esté centrado verticalmente */
+    text-align: center; /* Centra el contenido de las celdas */
+}
+
+.table {
+    margin-bottom: 0; /* Elimina el margen inferior de la tabla */
+    width: 100%; /* Asegúrate de que la tabla ocupe todo el ancho disponible */
+}
+
+/* Estilos para reducir el espacio entre las filas */
+.table tbody tr {
+    margin-bottom: 0;
+}
+
+/* Estilos para la fila del comensal */
+.comensal-header {
+    background-color: lightblue; /* Color de fondo para la fila actual */
+    padding: 2px 10px; /* Reduce el relleno para que la fila sea menos alta */
+}
+
+/* Estilos específicos para los inputs */
+.input-number, .quantity-input {
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Mejoras visuales para la tabla */
+.table {
+    border-collapse: collapse; /* Elimina el espacio entre celdas */
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table tbody td {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para los botones y entradas de cantidad */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-radius: 0.25rem;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+}
+
+.price-input {
+    width: 80px;
+    text-align: center;
+}
+
+/* Adaptaciones para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    .table td, .table th {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Estilos para el pie de orden fijo */
+.pie-orden {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Estilos para la columna y el contenedor de la orden */
+.order-column, .orden-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.orden-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: calc(100vh - 150px); /* Altura máxima ajustada al viewport */
+}
+
+/* Estilos para el pie de la orden */
+.order-footer {
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    bottom: 0;
+   
+}
+
+.text-white {
+    color: #ffffff; /* Establece el color del texto a blanco */
+}
+
+.customer-search {
+    display: flex;
+    align-items: center;
+}
+
+
+.total-highlight {
+    font-weight: bold;
+    color: white !important;
+}
+
+
+.discount-input {
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+.orden-column {
+    overflow-y: auto;
+    max-height: 500px; /* Ajusta esto según tus necesidades */
+}

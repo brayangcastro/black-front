@@ -1,0 +1,258 @@
+/* Estilos base para la fuente y alineación de texto */
+.contenido-informe, p {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-align: justify;
+  word-break: keep-all;
+}
+
+/* Estilos para los elementos de pregunta */
+.question-item {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.question-indicador,
+.question-title {
+  margin: 5px 10px;
+}
+
+.question-indicador {
+  font-size: 1.2em;
+}
+
+.question-title {
+  font-size: 1em;
+}
+
+/* Sección de espaciado */
+.section-space {
+  margin: 30px 0;
+}
+.encabezado-carta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en la pantalla si no hay suficiente espacio */
+  margin-top: 0px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #000;
+}
+
+.logo-container {
+  flex: 1; /* Permite que el contenedor crezca para llenar el espacio pero también se encoge si es necesario */
+  display: flex;
+  justify-content: flex-start; /* Alinea el logo al inicio del contenedor */
+}
+
+.titulo-slogan-container {
+  flex: 2; /* Permite que este contenedor tenga el doble de espacio que los otros */
+  display: flex;
+  flex-direction: column; /* Organiza el título y el eslogan uno sobre el otro */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.lugar-fecha-container {
+  flex: 1; /* Igual que el logo, permite que crezca y se encoge */
+  display: flex;
+  flex-direction: column; /* Organiza el lugar y la fecha uno sobre el otro */
+  align-items: flex-end; /* Alinea el texto al final del contenedor */
+}
+.logo-carta {
+  width: 180px; /* Ajusta esto a un valor que consideres adecuado para el tamaño del logo */
+  max-width: 100%; /* Asegura que el logo sea responsivo y no exceda el ancho de su contenedor */
+  height: auto; /* Mantiene la relación de aspecto del logo */
+}
+
+
+
+/* Footer general styling */
+.footer {
+  display: flex; /* Utiliza Flexbox para alinear los elementos */
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center; /* Asegura que el texto dentro de los elementos esté centrado */
+  margin-top: 40px; /* Espacio en la parte superior del footer */
+  padding-top: 2px; /* Espacio interno en la parte superior del footer */
+  border-top: 1px solid #000; /* Línea en la parte superior del footer */
+}
+
+/* Footer content container styling */
+.firma-contenedor {
+  display: inline-block; /* Allows block-level elements to be centered */ 
+  margin-top: 50px; /* Adjust as needed */
+ 
+  width: 100%; /* Takes the full width to center the contents */
+}
+
+/* Signature line styling */
+.firma-línea {
+  display: block; /* Ensures the element is on its own line */
+  width: 200px; /* Width of the line */
+  border-bottom: 1px solid #000; /* Style of the line */
+  margin: 5px auto; /* Centers the line horizontally */
+
+}
+
+
+/* If there are any specific adjustments for smaller screens */
+@media (max-width: 768px) {
+  .firma-contenedor {
+    padding: 0 5px; /* Adds padding on smaller screens */
+  }
+}
+ 
+
+/* Estilos generales del gráfico */
+.grafico-contenedor {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del gráfico */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen a las barras */
+  padding: 15px; /* Espaciado alrededor del gráfico */
+  background: rgba(255, 255, 255, 0.9); /* Fondo con opacidad */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+  page-break-inside: avoid;
+  width: 100%;
+  max-width: 500px;
+  
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center;
+}
+
+/* Estilos específicos para las barras del gráfico */
+.bar {
+  border-radius: 4px; /* Bordes redondeados en las barras */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Borde sutil para las barras */
+}
+
+/* Puedes necesitar añadir estas clases a tus componentes de Chart.js o a través de plugins */
+
+
+/* Áreas de texto y su responsividad */
+.text-answer-area, .text-answer-prompt {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.text-answer-prompt {
+ 
+  height: 750px;
+}
+
+.text-answer-area {
+   
+  min-height: 150px;
+}
+
+/* Media queries para adaptabilidad en diferentes dispositivos */
+@media (max-width: 768px) {
+  .text-answer-area {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-answer-area {
+    padding: 5px;
+  }
+}
+/* Estilo para la imagen de la firma */
+.firma-imagen {
+  display: block; /* La imagen se muestra como un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  height: auto; /* Se ajusta para mantener la relación de aspecto */
+  max-height: 100px; /* Ajusta según el tamaño deseado */
+}
+
+/* Estilo para la línea debajo de la firma */
+.firma-línea {
+  display: block; /* La línea se muestra como un bloque */
+  width: 200px; /* El ancho de la línea */
+  border-bottom: 1px solid #000; /* El estilo de la línea */
+  margin: 10px auto 0; /* Centra la línea horizontalmente con márgenes automáticos */
+}
+
+.firma-línea {
+  display: block; /* La línea se muestra como un bloque */
+  width: 200px; /* El ancho de la línea */
+  border-bottom: 1px solid #000; /* El estilo de la línea */
+  margin: 10px auto 0; /* Centra la línea horizontalmente con márgenes automáticos */
+}
+
+/* Estilos generales del gráfico */
+.contenedor_final{
+ 
+  page-break-inside: avoid;
+  width: 100%;
+  align-items: center;
+}
+
+
+ 
+/* Estilos comunes para todos los botones */
+.button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Estilos específicos para cada botón */
+.validate-button {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+}
+
+.email-button {
+  background-color: #008CBA; /* Azul */
+  color: white;
+}
+
+.phone-button {
+  background-color: #f4b136; /* Rojo */
+  color: white;
+}
+
+/* Efecto al pasar el ratón sobre los botones */
+.button:hover {
+  opacity: 0.8;
+}
+
+.print-button {
+  background-color: #ff5722; /* Naranja */
+  color: white;
+}
+
+/* Ajustar para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+ 
+
+  .button {
+    width: 100%; /* Hace que los botones ocupen todo el ancho */
+  }
+}
+
+
+.negrita {
+  font-weight: bold;
+  
+  display: inline-block; /* La línea se muestra como un bloque */
+}
+.subrayado {
+  
+  display: inline-block; /* La línea se muestra como un bloque */
+  text-decoration: underline;
+}
+
+.titulo_reporte {
+  text-align: center;
+  font-weight: bold;
+}

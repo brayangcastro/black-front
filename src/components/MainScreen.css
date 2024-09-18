@@ -1,0 +1,71 @@
+/* MainScreen.css */
+.main-screen {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* dos columnas */
+    grid-template-rows: repeat(2, 1fr); /* dos filas */
+    height: 100vh; /* Asegura que la cuadrícula ocupe toda la altura de la vista */
+    gap: 10px; /* Espacio entre botones si lo deseas */
+  }
+  
+  .main-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit; /* o el color que desees para el texto */
+    background-color: #f0f0f0; /* o el color de fondo que prefieras */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icon {
+    font-size: 4rem; /* Tamaño del icono */
+  }
+  
+  .main-button span {
+    margin-top: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  /* Main styles (unchanged) */
+/* ... your existing CSS ... */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navigation-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .logo-container, .user-icon-container, .menu-icon {
+      width: 100%; /* Make each element full width */
+      justify-content: space-between; /* Align logo, user icon, and menu icon on the same line */
+      padding: 0.5rem 1rem; /* Adjust padding as needed */
+    }
+  
+    .user-icon-container {
+      order: -1; /* Move user icon container to the top */
+      margin-bottom: 0.5rem; /* Add space below the user icon container */
+    }
+    
+    .menu {
+      position: static; /* On mobile, let the menu flow in the document */
+      width: 100%; /* Full width for the menu */
+      display: none; /* Start with the menu hidden */
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; /* Center menu items */
+      gap: 0; /* Remove gap between menu items if needed */
+    }
+  
+    .menu.active {
+      display: flex; /* Display the menu when active */
+    }
+    
+    .menu li {
+      width: 100%; /* Full width for menu items */
+    }
+  
+    /* Add any additional mobile-specific styles here */
+  }
+  

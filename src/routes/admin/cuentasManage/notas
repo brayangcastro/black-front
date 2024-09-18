@@ -1,0 +1,6 @@
+ProductsManageView: Componente principal que gestiona la vista de productos.
+PDFPreview: Componente para visualizar PDFs.
+ProductDetailModal: Modal que muestra los detalles del producto.
+EditProductForm: Formulario modal para editar productos.
+AddProductForm: Formulario modal para agregar nuevos productos.
+AddProviderModal: Modal para agregar proveedores.

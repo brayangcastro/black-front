@@ -1,0 +1,364 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  color: #1f1f1f;
+}
+
+/* colores: negro #1f1f1f azul #1ab1de blanco #f1efec*/
+
+.btn-accion img {
+  filter: invert(100%) sepia(0%) saturate(7498%) hue-rotate(315deg) brightness(102%) contrast(101%);
+}
+
+.btn-accion:hover {
+  transform: translateY(0px) !important;
+}
+
+.btn-accion-black img {
+  filter: invert(64%) sepia(7%) saturate(281%) hue-rotate(227deg) brightness(87%) contrast(86%);
+}
+
+.btn-accion-black:hover {
+  transform: translateY(0px) !important;
+}
+
+.btn-accion-gray img {
+  filter: invert(48%) sepia(12%) saturate(320%) hue-rotate(167deg) brightness(92%) contrast(90%);
+}
+
+.btn-accion-gray:hover {
+  transform: translateY(0px) !important;
+}
+
+.btn-accion-gray:hover img {
+  filter: invert(95%) sepia(5%) saturate(88%) hue-rotate(187deg) brightness(99%) contrast(99%);
+}
+
+
+
+.fondo-blanco {
+  background-color: #f1efec;
+}
+
+.linea {
+
+  background-color: #1ab1de;
+  height: 2px;
+
+}
+
+.acciones Button {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+
+.btn-success {
+  background-color: #1AB1DE !important;
+  border-color: #1AB1DE !important;
+}
+
+.btn-success:hover {
+  background-color: #1590b2 !important;
+  border-color: #1590b2 !important;
+}
+
+.btn-outline-success {
+  color: #1AB1DE !important;
+  border-color: #1AB1DE !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #1AB1DE !important;
+  border-color: #1AB1DE !important;
+  color: #fff !important;
+}
+
+h5 {
+  color: #494f55 !important;
+}
+
+p {
+  color: #888c90 !important;
+}
+
+.tituloiniciarsesion {
+  margin-bottom: 5% !important;
+}
+
+.card-signup {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  border-color: transparent !important;
+  padding: 20px !important;
+  border-radius: 5% !important;
+}
+
+.btn-signup {
+  width: 100% !important;
+  font-size: 0.9em;
+  margin-top: 3% !important;
+  margin-bottom: 2% !important;
+}
+
+.mutedTxt {
+  color: #888c90 !important;
+  font-size: 0.8em;
+  margin-top: 10%;
+}
+
+.linkTxt {
+  color: #1ab1db !important;
+  text-decoration: none !important;
+}
+
+.linkBtn {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 0.9em;
+}
+
+.login-bgnd {
+  background-image: url('./assets/img/background.svg');
+  background-size: auto;
+  background-position: center;
+}
+
+.centro {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fondo-azul-claro {
+  background-color: #1ab0de3a;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+.separado {
+  padding: 2%;
+}
+
+
+/* Estilo para hacer que los elementos de la lista se vean como enlaces */
+.Item {
+  cursor: pointer;
+  color: #007bff;
+  /* Cambia este color según tus preferencias */
+  text-decoration: underline;
+}
+
+/* Estilo para quitar el subrayado cuando el cursor pasa sobre los elementos */
+.Item:hover {
+  text-decoration: none;
+  background-color: #494f5510;
+}
+
+.offcanvas-chico {
+  width: 250px !important;
+}
+
+.linkBtn-black {
+  color: #000 !important;
+  text-decoration: none !important;
+  font-size: 0.9em;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+.login-titulo {
+  color: #00000090 !important;
+}
+
+.card-login {
+  width: 400px !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  border-color: #1ab1de !important;
+  border-radius: 5% !important;
+  background-color: #eff0f3 !important;
+}
+
+.card-login-mobile {
+  width: 'fit-content' !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  border-color: #1ab1de !important;
+  border-radius: 5% !important;
+  
+  background-size: cover !important;
+}
+
+.logo {
+  max-width: 200px !important;
+  padding-bottom: 20px !important;
+}
+
+.info-icon {
+  color: #1ab1de;
+}
+
+.info-icon:hover {
+  color: #1590b2;
+  cursor: pointer;
+}
+
+.chart {
+  width: 70% !important;
+  height: auto !important;
+  margin: auto
+}
+
+.paid {
+  /*fondo color verde en hexadecimal*/
+  background-color: #00ff0040 !important;
+}
+
+.pending {
+  /*fondo color amarillo en hexadecimal*/
+  background-color: #ffff0040 !important;
+}
+
+.detalle-paid {
+  background-color: #00ff0040 !important;
+  width: fit-content !important;
+  border-radius: 10% !important;
+  padding: 5px 5px !important;
+  /* Añadir relleno para mayor apariencia de etiqueta */
+  display: inline-block !important;
+  /* Hacer que se comporte como una etiqueta */
+}
+
+.detalle-pending {
+  /*fondo color amarillo en hexadecimal*/
+  background-color: #ffff0040 !important;
+  width: fit-content !important;
+  border-radius: 10% !important;
+  padding: 5px 5px !important;
+  /* Añadir relleno para mayor apariencia de etiqueta */
+  display: inline-block !important;
+  /* Hacer que se comporte como una etiqueta */
+}
+
+td {
+  vertical-align: middle!important;
+}
+
+/* Navbar Custom Styles */
+.navbar-custom {
+  background-color: #33475b!important; /* Cambia al color de fondo oscuro deseado */
+  border-bottom: 4px solid #4caf50!important; /* Barra de acento de color */
+  display: flex!important; /* Usa flexbox para el contenedor del navbar */
+  align-items: center!important; /* Alinea los elementos verticalmente en el centro */
+  justify-content: space-between!important; /* Espacia los elementos de forma equitativa */
+}
+
+/* Logo Styles */
+.navbar-brand img {
+  height: 60px; /* Altura del logo */
+  width: auto; /* Mantener la proporción del logo */
+}
+
+/* Navbar Link Styles */
+.nav-link {
+  padding: 5px 15px !important;
+  color: #ffffff!important; /* Color de texto para los enlaces */
+  margin-right: 15px!important; /* Espaciado a la derecha de los enlaces */
+   /* Fuente en negrita */
+  transition: color 0.3s ease-in-out!important; /* Transición suave de color */
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #4caf50!important; /* Color al pasar el ratón por encima */
+  text-decoration: none!important; /* Eliminar el subrayado al pasar el ratón por encima */
+}
+
+/* Nombre de usuario y icono de cierre de sesión */
+.user-info {
+  display: flex!important;
+  align-items: center!important;
+  color: #ffffff!important;
+}
+
+.user-info .fa-user-circle {
+  margin-right: 8px!important; /* Espaciado a la derecha del icono del usuario */
+  color: #ffffff!important; /* Color del botón de cerrar sesión */
+}
+
+.user-info .user-name {
+  margin-right: 20px!important; /* Espaciado a la derecha del nombre de usuario */
+  color: #ffffff!important; /* Color del botón de cerrar sesión */
+}
+
+/* Botón de cerrar sesión */
+.sign-out-btn {
+  color: #ffffff!important; /* Color del botón de cerrar sesión */
+  background-color: transparent!important; /* Fondo transparente */
+  border: none!important; /* Sin borde */
+}
+
+.sign-out-btn:hover {
+  color: #4caf50!important; /* Color al pasar el ratón por encima */
+}
+
+/* Estilos para separadores verticales */
+.divider {
+  border-left: 1px solid #4caf50!important; /* Color del separador vertical */
+  height: 30px!important; /* Altura del separador */
+  margin: 0 20px!important; /* Espaciado alrededor del separador */
+}
+
+/* Estilos para el botón de menú Offcanvas */
+.offcanvas-toggle-btn {
+  border: 2px solid #4caf50!important; /* Borde del botón de menú */
+  color: #4caf50!important; /* Color del botón de menú */
+  background-color: transparent!important; /* Fondo transparente */
+  margin-left: 20px!important; /* Espaciado a la izquierda del botón de menú */
+}
+
+.offcanvas-toggle-btn:hover {
+  background-color: #4caf50; /* Fondo del botón de menú al pasar el ratón por encima */
+  color: #ffffff; /* Color del texto del botón de menú al pasar el ratón por encima */
+}
+
+/* Media queries para la responsividad */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 50px; /* Altura más pequeña para pantallas más pequeñas */
+  }
+
+  .user-info .user-name {
+    display: none; /* Ocultar el nombre en dispositivos móviles */
+  }
+
+  .divider {
+    display: none; /* Ocultar el separador en dispositivos móviles */
+  }
+}
+
+/* Navbar Custom Styles */
+.navbar {
+  display: flex!important; /* Usa flexbox para el contenedor del navbar */
+  align-items: center!important; /* Alinea los elementos verticalmente en el centro */
+  justify-content: space-between!important; /* Espacia los elementos de forma equitativa */
+}
+
+.nav-item {
+  display: flex!important;
+  align-items: center!important; /* Alinea los elementos verticalmente en el centro */
+}
+
+/* Asegúrate de que los NavLinks no tengan márgenes que afecten la alineación */
+.nav-link {
+  margin: 0!important;
+  padding: 8px 12px!important; /* Ajuste el padding si es necesario */
+}
+
+/* Ajuste para íconos dentro de NavLinks */
+.fa-icons {
+  margin-right: 8px; /* Espacio a la derecha del ícono */
+}
+
