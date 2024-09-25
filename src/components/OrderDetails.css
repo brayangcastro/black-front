@@ -1,0 +1,113 @@
+/* Fondo oscuro y texto claro */
+.order-details-container {
+    background-color: #121212;
+    color: #f0f0f0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
+  
+  /* Estilos para el encabezado de la orden */
+  .order-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+  }
+  
+  /* Usamos CSS Grid para alinear la información de la orden */
+  .order-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .order-info p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+  }
+  
+  /* Mejora de visibilidad para el texto */
+  .order-header h1, .section-title, .item-card p, .order-info p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .item-card p, .order-info p {
+    color: #e0e0e0; /* Aumenta el contraste del texto */
+    font-weight: 500;
+  }
+  
+  .section-title {
+    margin-top: 30px;
+    font-size: 2rem;
+    color: #e0e0e0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+  }
+  
+  /* Estilos para los productos reservados */
+  .item-card {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .item-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  .item-card p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .item-card strong {
+    color: #e0e0e0;
+  }
+  
+  /* Imagen del producto */
+  .product-image {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Estilos para texto de carga y error */
+  .loading-text,
+  .error-text {
+    font-size: 1.5rem;
+    color: #e57373;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el mapa y marcador */
+  .map-container {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .map-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .marker {
+    position: absolute;
+    border: 8px solid rgb(28, 165, 58);
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

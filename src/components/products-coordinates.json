@@ -1,0 +1,29 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Cubículo 1 - 4 personas",
+        "coordinates": {
+          "x": 100,
+          "y": 200
+        }
+      },
+      {
+        "id": 2,
+        "name": "Sala de juntas - 8 personas",
+        "coordinates": {
+          "x": 300,
+          "y": 400
+        }
+      },
+      {
+        "id": 3,
+        "name": "Auditorio - 50 personas",
+        "coordinates": {
+          "x": 500,
+          "y": 100
+        }
+      }
+    ]
+  }
+  

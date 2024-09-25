@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logoEmpresa from '../assets/img/blankas.jpg'; // Asegúrate de que la ruta sea correcta
+import logoEmpresa from '../assets/img/Logo_completo_blanco.svg'; // Asegúrate de que la ruta sea correcta
 import axios from 'axios';
 import apiUrls from '../api';
 
@@ -44,7 +44,7 @@ const { setUser } = useUser();
     };
 
     return (
-        <div style={{ display: 'flex', height: '100vh', textAlign: 'center', background: '#FFFFFF'}}>
+        <div style={{ display: 'flex', height: '100vh', textAlign: 'center', background: '#000000'}}>
             {/* Sección para el logo */}
             <div style={{ flex: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src={logoEmpresa} alt="Logo Empresa" style={{ maxWidth: '100%', maxHeight: '60%', objectFit: 'contain' }} />

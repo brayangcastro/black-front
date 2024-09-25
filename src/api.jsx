@@ -223,6 +223,7 @@ const apiUrls = {
 
     cambiarColorLED: `${sincroUrl}/cambiarColorLED`,
     controlarGPIO: `${sincroUrl}/controlarGPIO`,
+    getOrderById: `${sincroUrl}/getOrderById`,
 
     listarCuentas: `${cuentasUrl}/listarCuentas`,
     agregarCuenta: `${cuentasUrl}/agregarCuenta`,

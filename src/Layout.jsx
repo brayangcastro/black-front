@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar, NavLink, NavItem, Button, Offcanvas, ListGroup } from 'react-bootstrap';
-import logoNeerd from './assets/img/blankas.jpg';
+import logoNeerd from './assets/img/Logo_BZ.svg';
 import { NumericKeypad, LockScreen } from './components/components';
 
 import Iconlogout from './assets/icons/logout.svg'
@@ -170,13 +170,13 @@ function Layout({ children }) {
                             <span className="ms-2">ÓRDENES</span>
                         </Link>
                         <div className="mx-3 border-end"></div>
-                        <Link to="/tickets" className="nav-link d-flex align-items-center">
+                        <Link to="/calendario" className="nav-link d-flex align-items-center">
                             <FontAwesomeIcon icon={faReceipt} size="2x" />
                             <span className="ms-2">TICKETS</span>
                         </Link>
 
                         <div className="mx-3 border-end"></div>
-                        <Link to="/cuentas" className="nav-link d-flex align-items-center">
+                        <Link to="/clientes" className="nav-link d-flex align-items-center">
                             <FontAwesomeIcon icon={faReceipt} size="2x" />
                             <span className="ms-2">CUENTAS</span>
                         </Link>
@@ -231,7 +231,7 @@ function Layout({ children }) {
 
             <div className="linea"></div>
 
-            <br />
+            
             <Offcanvas show={showOffcanvas} onHide={handleOffcanvasToggle} placement="end" backdrop={false} className='offcanvas-chico'>
                 <Offcanvas.Header>
                     <Offcanvas.Title>

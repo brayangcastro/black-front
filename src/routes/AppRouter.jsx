@@ -16,6 +16,7 @@ import EjecutarComando from '../components/EjecutarComando';
 import ListaTicketsSoporte from '../components/ListaTicketsSoporte';
 import AccessScreen from '../components/AccessScreen';
 import IngresosView from '../components/IngresosView';
+import OrderDetails from '../components/OrderDetails';
 
 const initialState = {
     tipoUsuario: 1,
@@ -60,13 +61,14 @@ function AppRouter() {
              {/* <BrowserRouter basename="/estacion" > */}
             <Routes>
             <Route path="/lockscreen" element={<LockScreen />} /> {/* Ruta agregada para LockScreen */}
-              
+            <Route path="/order/:orderId" element={ <OrderDetails /> } />
+                    
                 {isAuthenticated ? (
                     <Route element={<Outlet />}>
                         <Route path="/" element={<Layout><VentasManage /></Layout>} />
-
+ 
                         
-                        
+                         
                         <Route path="/cuentas" element={<Layout><CuentasManage /></Layout>} />
                         <Route path="/ejecutar" element={<Layout><EjecutarComando /></Layout>} />
                         <Route path="/soporte" element={<Layout><ListaTicketsSoporte /></Layout>} />
