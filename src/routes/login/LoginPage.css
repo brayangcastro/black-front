@@ -1,0 +1,44 @@
+
+
+/* Fondo de la página */
+.login-bgnd {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    background-color: #000 !important; /* Fondo negro */
+}
+
+/* Centrar el contenedor horizontalmente */
+.login {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* Asegurar centrado horizontal */
+}
+
+/* Ajustar el fondo de la tarjeta para que el logo sea visible */
+.card-login {
+    background-color: #121212 !important; /* Fondo gris oscuro */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 40px 30px !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Aplicar una sombra suave al logo para que resalte mejor */
+.logo {
+    display: block !important;
+    margin: 0 auto 30px auto !important;
+    width: 200px !important;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7)) !important;
+}
+
+.tituloiniciarsesion {
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    font-size: 24px !important;
+    color: #fff !important;
+}
