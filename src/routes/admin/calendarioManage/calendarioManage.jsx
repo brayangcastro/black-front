@@ -33,15 +33,18 @@ const CalendarioManage = () => {
     const [startDateMes, setStartDateMes] = useState(initialStartDate);
     const [endDateMes, setEndDateMes] = useState(initialEndDate);
 
+
+    useEffect(() => {
+        // Al montar el componente, cargar los eventos y disponibilidad de la semana actual
+        loadEventsAndAvailability(startDateSemana, endDateSemana);
+    }, []); // Solo se ejecuta una vez cuando el componente se monta
+
+    
     useEffect(() => {
         console.log("viewMode:", viewMode);
     }, [viewMode]);
 
-    useEffect(() => {
-        if (viewMode === 'semanal') {
-            loadEventsAndAvailability(startDateSemana, endDateSemana);
-        }
-    }, [viewMode, startDateSemana, endDateSemana]);    
+    
 
     useEffect(() => {
         const obtenerHorarios = async () => {
@@ -153,18 +156,17 @@ const CalendarioManage = () => {
         }
     };
 
-    const handleUpdateAvailability = async (fecha, horario, nuevaCapacidad) => {
+    const handleUpdateAvailability = async (fecha, horario, espacio, nuevaCapacidad) => {
         try {
-            console.log('Enviando...', fecha, horario, nuevaCapacidad);
             const response = await axios.post(apiUrls.editarAgregarDisponibilidad, {
                 fecha,
                 horario,
+                espacio,
                 capacidad: nuevaCapacidad
             });
             if (response.data.success) {
-                alert('Disponibilidad actualizada o agregada correctamente');
-                const { startDate, endDate } = getWeekStartAndEnd(currentWeek);
-                loadEventsAndAvailability(startDate, endDate);
+                const { startDate, endDate } = getWeekStartAndEnd(currentWeek); // Asegúrate de usar las fechas correctas
+                loadEventsAndAvailability(startDate, endDate); // Recargar la disponibilidad
             } else {
                 alert('Error al actualizar la disponibilidad: ' + response.data.message);
             }
@@ -173,6 +175,7 @@ const CalendarioManage = () => {
             alert('Error de comunicación al actualizar la disponibilidad');
         }
     };
+    
 
     const updateDateRangeTabla = (start, end) => {
         setStartDateTabla(start);

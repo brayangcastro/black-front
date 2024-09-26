@@ -17,7 +17,8 @@ import ListaTicketsSoporte from '../components/ListaTicketsSoporte';
 import AccessScreen from '../components/AccessScreen';
 import IngresosView from '../components/IngresosView';
 import OrderDetails from '../components/OrderDetails';
-
+import DisponibilidadManage from '../routes/admin/calendarioManage/DisponibilidadManage';
+ 
 const initialState = {
     tipoUsuario: 1,
     accesoTest: 1,
@@ -65,8 +66,10 @@ function AppRouter() {
                     
                 {isAuthenticated ? (
                     <Route element={<Outlet />}>
-                        <Route path="/" element={<Layout><VentasManage /></Layout>} />
+                        <Route path="/" element={<Layout><DisponibilidadManage /></Layout>} />
  
+                        <Route path="/calendispo" element={<Layout><DisponibilidadManage /></Layout>} />
+
                         
                          
                         <Route path="/cuentas" element={<Layout><CuentasManage /></Layout>} />

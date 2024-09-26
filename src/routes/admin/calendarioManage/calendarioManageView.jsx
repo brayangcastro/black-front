@@ -36,6 +36,7 @@ const CalendarioManageView = ({
     const [fixedHour, setFixedHour] = useState(false);
     const [isUnavailable, setIsUnavailable] = useState(false);
     const [selectedViewDate, setSelectedViewDate] = useState(new Date());
+    const [newEventSpace, setNewEventSpace] = useState(null); // Nuevo estado para el espacio
 
     const spaces = Array.from({ length: 11 }, (_, i) => i + 1); // Espacios del 1 al 11
 
@@ -50,43 +51,54 @@ const CalendarioManageView = ({
 
     const findEventsBySpaceAndHour = (space, hour) => {
         return events.filter(event =>
-            event.espacio == space && event.hour === hour && event.fecha === formatDateToYYYYMMDD(selectedViewDate)
+            event.space == space && event.hour === hour && event.fecha === formatDateToYYYYMMDD(selectedViewDate)
         );
     };
 
     const getAvailabilityBySpaceAndHour = (space, hour) => {
-        return disponibilidad.find(d => {
-            const availabilityDate = d.Fecha;
-            const selectedDate = formatDateToYYYYMMDD(selectedViewDate);
-
-            return d.Espacio == space &&
-                   d.Horario === hour &&
-                   availabilityDate === selectedDate;
-        }) || { EspaciosDisponibles: 0 };
+        // Filtrar todas las disponibilidades que coincidan con espacio y horario
+        const availabilities = disponibilidad.filter(d =>
+            d.Espacio == space &&
+            d.Horario === hour &&
+            d.Fecha === formatDateToYYYYMMDD(selectedViewDate)
+        );
+    
+        if (availabilities.length === 0) {
+            return { EspaciosDisponibles: 0, Capacidad: 0 };
+        }
+    
+        // Sumar la capacidad total y los espacios disponibles
+        const totalCapacidad = availabilities.reduce((acc, curr) => acc + parseInt(curr.Capacidad, 10), 0);
+        const totalDisponibles = availabilities.reduce((acc, curr) => acc + parseInt(curr.EspaciosDisponibles, 10), 0);
+    
+        return { EspaciosDisponibles: totalDisponibles, Capacidad: totalCapacidad };
     };
+    
 
     const handleCellClick = (space, hour, date) => {
-        const availability = getAvailabilityBySpaceAndHour(space, hour);
-        const isSpaceAvailable = availability.EspaciosDisponibles > 0;
+        const eventsAtThisTime = findEventsBySpaceAndHour(space, hour);
+        if (eventsAtThisTime.length > 0) {
+            setSelectedEvent(eventsAtThisTime[0]);
+            setShowModalEvento(true);
+        } else {
+            const availability = getAvailabilityBySpaceAndHour(space, hour);
+            const isSpaceAvailable = availability.EspaciosDisponibles > 0;
 
-        setSelectedAvailability({
-            fecha: formatDateToYYYYMMDD(date),
-            horario: hour,
-            capacidad: availability.Capacidad,
-            espacio: space
-        });
+            setSelectedAvailability({
+                fecha: formatDateToYYYYMMDD(date),
+                horario: hour,
+                capacidad: availability.Capacidad,
+                espacio: space
+            });
 
-        setNewEventDate(formatDateToYYYYMMDD(date));
-        setNewEventHour(hour);
-        setFixedHour(true);
-        setIsUnavailable(!isSpaceAvailable);
+            setNewEventDate(formatDateToYYYYMMDD(date));
+            setNewEventHour(hour);
+            setNewEventSpace(space); // Guarda el espacio seleccionado
+            setFixedHour(true);
+            setIsUnavailable(!isSpaceAvailable);
 
-        setShowModalAgregarEvento(true);
-    };
-
-    const handleEventClick = (event) => {
-        setSelectedEvent(event);
-        setShowModalEvento(true);
+            setShowModalAgregarEvento(true);
+        }
     };
 
     const handleShowModalAgregarEvento = () => {
@@ -167,7 +179,7 @@ const CalendarioManageView = ({
                 <>
                     <div className="row mb-4">
                         <div className="col text-center" style={{ color: '#29488F', fontSize: '24px', fontWeight: 'bold' }}>
-                            Rango de Fechas: {formatDateToYYYYMMDD(startDate)} - {formatDateToYYYYMMDD(endDate)}
+                            Fecha:{formatDateToYYYYMMDD(selectedViewDate)}
                         </div>
                         <div className="col text-center">
                             <label>Seleccionar Fecha</label>
@@ -179,14 +191,7 @@ const CalendarioManageView = ({
                             />
                         </div>
                     </div>
-                    <div>
-                        <button className="modern-button gold-button" onClick={handlePreviousWeek}>Semana Anterior</button>
-                        <button className="modern-button gold-button" onClick={handleNextWeek}>Semana Siguiente</button>
-                    </div>
-                    <div>
-                        <button className="modern-button blue-button" onClick={handleShowModalAgregarEvento}>Agregar Nuevo Evento</button>
-                        <button className="modern-button blue-button" onClick={() => setShowAgregarDisponibilidad(true)}>Agregar Disponibilidad</button>
-                    </div>
+                   
                     <table>
                         <thead>
                             <tr>
@@ -203,29 +208,40 @@ const CalendarioManageView = ({
                                 <tr key={hourIndex} style={{ border: '3px solid #6D7178' }}>
                                     <td style={{ border: '3px solid #6D7178', padding: '12px', textAlign: 'center', backgroundColor: '#D8DBDB' }}>{hour}</td>
                                     {spaces.map((space) => {
-                                        const eventsAtThisTime = findEventsBySpaceAndHour(space, hour);
-                                        const availability = getAvailabilityBySpaceAndHour(space, hour);
-                                        const availabilityText = `${availability.EspaciosDisponibles} espacios disponibles`;
-                                        return (
-                                            <td
-                                                key={`${space}-${hour}`}
-                                                style={{ border: '3px solid #6D7178', padding: '12px', textAlign: 'center', position: 'relative' }}
-                                                onClick={() => handleCellClick(space, hour, selectedViewDate)}
-                                            >
-                                                {eventsAtThisTime.map(event => (
-                                                    <div key={event.id} className={`event ${event.status.toLowerCase()}`} onClick={(e) => { e.stopPropagation(); handleEventClick(event); }}>
-                                                        {event.id} - {event.name}
-                                                    </div>
-                                                ))}
-                                                <div className="capacity-info">
-                                                    {availabilityText}
-                                                </div>
-                                                <div className="edit-availability" onClick={(e) => { e.stopPropagation(); handleEditAvailability(availability, space, hour, selectedViewDate); }} style={{ cursor: 'pointer', position: 'absolute', bottom: '5px', right: '5px', backgroundColor: '#f8f9fa', padding: '2px 5px', borderRadius: '3px' }}>
-                                                    Editar
-                                                </div>
-                                            </td>
-                                        );
-                                    })}
+    const eventsAtThisTime = findEventsBySpaceAndHour(space, hour);
+    const availability = getAvailabilityBySpaceAndHour(space, hour);
+    const availabilityText = `${availability.EspaciosDisponibles} espacios disponibles`;
+
+    const cellStyle = {
+        border: '3px solid #6D7178',
+        padding: '12px',
+        textAlign: 'center',
+        position: 'relative',
+        backgroundColor: availability.EspaciosDisponibles > 0 ? '#d4edda' : 'white',
+    };
+
+    return (
+        <td
+            key={`${space}-${hour}`}
+            style={cellStyle}
+            onClick={() => handleCellClick(space, hour, selectedViewDate)}
+        >
+            {eventsAtThisTime.map(event => (
+                <div key={event.id} className={`event ${event.status.toLowerCase()}`}>
+                    {event.id} - {event.name}
+                </div>
+            ))}
+            <div className="capacity-info">
+                {availabilityText}
+            </div>
+            <div className="edit-availability" onClick={(e) => { e.stopPropagation(); handleEditAvailability(availability, space, hour, selectedViewDate); }} style={{ cursor: 'pointer', position: 'absolute', bottom: '5px', right: '5px', backgroundColor: '#f8f9fa', padding: '2px 5px', borderRadius: '3px' }}>
+                Editar
+            </div>
+        </td>
+    );
+})}
+
+
                                 </tr>
                             ))}
                         </tbody>
@@ -264,6 +280,7 @@ const CalendarioManageView = ({
                             fixedHour={fixedHour}
                             isUnavailable={isUnavailable}
                             setIsUnavailable={setIsUnavailable}
+                            espacio={newEventSpace} // Pasa el espacio aquí
                         />
                     )}
 

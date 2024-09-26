@@ -202,6 +202,11 @@ const apiUrls = {
     editarAgregarDisponibilidad:`${calendarioUrl}/editarAgregarDisponibilidad`, 
     eliminarEvento:`${calendarioUrl}/eliminarEvento`, 
     editarEvento:`${calendarioUrl}/editarEvento`, 
+    obtenerDisponibilidadPorFechaYEspacio:`${calendarioUrl}/obtenerDisponibilidadPorFechaYEspacio`, 
+    obtenerEspacios:`${calendarioUrl}/obtenerEspacios`, 
+    procesarReserva:`${calendarioUrl}/procesarReserva`, 
+    obtenerDisponibilidadPorFechaYHora:`${calendarioUrl}/obtenerDisponibilidadPorFechaYHora`, 
+    
 
     getReporte:`${canchasUrl}/getreportmembresias`,
     getReporteTorneo:`${canchasUrl}/getreport`,

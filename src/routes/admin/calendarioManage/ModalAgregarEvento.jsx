@@ -5,13 +5,14 @@ import axios from 'axios';
 import apiUrls from '../../../api';
 import AgregarDisponibilidad from './AgregarDisponibilidad';
 
-const ModalAgregarEvento = ({ show, handleClose, saveEvento, initialDate, initialHour, fixedHour, availabilityText, onDisponibilidadClose, isUnavailable }) => {
+const ModalAgregarEvento = ({ show, handleClose, saveEvento, initialDate, initialHour, fixedHour, availabilityText, onDisponibilidadClose, isUnavailable,espacio }) => {
     const [newEvent, setNewEvent] = useState({
         description: '',
         status: 'pendiente',
         date: initialDate || '',
         hour: initialHour || '',
-        servicio: ''
+        servicio: '',
+        espacio: espacio || '' // Agrega el espacio al estado
     });
     const [availableHours, setAvailableHours] = useState([]);
     const [showAgregarDisponibilidad, setShowAgregarDisponibilidad] = useState(false);
@@ -23,7 +24,8 @@ const ModalAgregarEvento = ({ show, handleClose, saveEvento, initialDate, initia
         setNewEvent({
             description: '',
             status: 'pendiente',
-            servicio: ''
+            servicio: '',
+            espacio: espacio || '' // Actualiza el espacio
         });
         setAddAvailability(false); // Desactivar el checkbox
     };
@@ -140,16 +142,18 @@ const ModalAgregarEvento = ({ show, handleClose, saveEvento, initialDate, initia
     const saveEventAndClose = () => {
         const evento = {
             description: newEvent.description,
-            date: new Date(newEvent.date).toISOString().split('T')[0], // Asegurarse de que la fecha está en el formato correcto
-            hour: newEvent.hour.split(' (')[0], // Extraer solo la hora sin los espacios disponibles
+            date: new Date(newEvent.date).toISOString().split('T')[0],
+            hour: newEvent.hour.split(' (')[0],
             servicio: newEvent.servicio,
-            status: newEvent.status
+            status: newEvent.status,
+            espacio: newEvent.espacio // Incluye el espacio aquí
         };
         saveEvento(evento);
         handleClose();
-        setAddAvailability(false);  // Desmarcar el checkbox
-        resetEvent(); // Limpiar los campos después de guardar
-    };    
+        setAddAvailability(false);
+        resetEvent();
+    };
+
 
     useEffect(() => {
         if (newEvent.date && !fixedHour) {
@@ -239,6 +243,19 @@ const ModalAgregarEvento = ({ show, handleClose, saveEvento, initialDate, initia
                                 {errors.servicio}
                             </Form.Control.Feedback>
                         </Form.Group>
+
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Espacio</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="espacio"
+                                value={newEvent.espacio}
+                                readOnly
+                            />
+                        </Form.Group>
+
+                        
                         <Form.Group className="mb-3">
                             <Form.Label><FaCalendarAlt /> Fecha</Form.Label>
                             <Form.Control

@@ -34,6 +34,8 @@ const ModalEvento = ({ show, handleClose, event, updateEvent, saveEvento, editar
             service: '',
             name: '',
             status: 'pendiente'
+            ,
+            space: ''
         });
     };
 
@@ -45,7 +47,8 @@ const ModalEvento = ({ show, handleClose, event, updateEvent, saveEvento, editar
             hour: event.hour || '',
             service: event.service || '',
             name: event.name || '',
-            status: event.status || 'pendiente'
+            status: event.status || 'pendiente',
+             space: event.space || 'pendiente'
         });
         setErrors({
             description: '',

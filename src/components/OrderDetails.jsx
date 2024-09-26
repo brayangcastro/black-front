@@ -52,6 +52,7 @@ const OrderDetails = () => {
       try {
         const response = await axios.get(`${apiUrls.getOrderById}/${orderId}`);
         setOrder(response.data);
+        console.log("setOrder",response.data)
 
         // Buscar las coordenadas y la imagen del producto basado en el ID del producto (product_sku)
         const productId = response.data.items[0].product_sku; // Ajusta según la estructura de tu objeto 'order'

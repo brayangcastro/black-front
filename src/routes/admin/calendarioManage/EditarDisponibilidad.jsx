@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
-const EditarDisponibilidad = ({ show, fecha, horario, capacidad, onClose, onSave }) => {
-    const [capacidadActual, setCapacidadActual] = useState(capacidad);
+const EditarDisponibilidad = ({ show, fecha, horario, capacidad, espacio, onClose, onSave }) => {
+    const [capacidadActual, setCapacidadActual] = useState(capacidad || "1");
+    const [espacioActual, setEspacioActual] = useState(espacio);
 
     const handleCapacidadChange = (e) => {
         setCapacidadActual(e.target.value);
     };
 
+    const handleEspacioChange = (e) => {
+        setEspacioActual(e.target.value);
+    };
+
     const handleSave = () => {
-        onSave(fecha, horario, capacidadActual);
+        onSave(fecha, horario,espacioActual, capacidadActual); // Pasamos el espacioActual al guardar
         onClose();
     };
 
@@ -34,6 +39,14 @@ const EditarDisponibilidad = ({ show, fecha, horario, capacidad, onClose, onSave
                             type="number"
                             value={capacidadActual}
                             onChange={handleCapacidadChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Espacio</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={espacioActual}
+                            onChange={handleEspacioChange}
                         />
                     </Form.Group>
                 </Form>

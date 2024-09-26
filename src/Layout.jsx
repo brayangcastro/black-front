@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {
-    faMoneyBill, faUserGraduate, faTrophy, faBook, faTicketAlt, faReceipt, faUserCircle, faTable,
+import {faGavel,faTachometerAlt,
+    faUser,  faMoneyBill, faUserGraduate, faTrophy, faBook, faTicketAlt, faReceipt, faUserCircle, faTable,
     faClipboardList, faCashRegister, faHome, faSignOutAlt,faTools
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -68,7 +68,7 @@ function Layout({ children }) {
     useEffect(() => {
         // Si el usuario está inactivo, redirigir a la pantalla de bloqueo
         if (!isActive  && location.pathname !== '/' && location.pathname !== '/ventas/1') {
-            navigate('/lockscreen', { state: { from: location } });
+           // navigate('/lockscreen', { state: { from: location } });
         }
     }, [isActive, navigate]);
 
@@ -134,110 +134,100 @@ function Layout({ children }) {
 
     return (
         <>
-             <Navbar style={{ backgroundColor: '#505050' }} expand="lg">
-                <Container className="navbar-container">
-                    <Navbar.Brand style={{ padding: 0 }} >
-                        <Link to="/">
-                            <img
-                                alt=""
-                                src={logoNeerd}
-                                width="auto"
-                                height="40px"
-                                className="d-inline-block align-top"
-                            />
-                        </Link>
-                    </Navbar.Brand>
+         <Navbar style={{ backgroundColor: '#505050' }} expand="lg">
+    <Container fluid>
+        {/* Contenedor para el logo en el extremo izquierdo */}
+        <Navbar.Brand onClick={handleOffcanvasToggle}>
+           
+                <img
+                    alt="Logo"
+                    src={logoNeerd}
+                    width="auto"
+                    height="40px"
+                    className="d-inline-block align-top"
+                />
+           
+        </Navbar.Brand>
 
-                 
-
-                    <Nav className="ms-auto align-items-center navbar-container">
-                        {/* 
-                    <Link to="/torneos" className="nav-link"><FontAwesomeIcon icon={faTrophy} /> Torneos</Link>
-    <Link to="/clientes" className="nav-link"><FontAwesomeIcon icon={faUserGraduate} /> Estudiantes</Link>
-    <Link to="/tickets" className="nav-link"><FontAwesomeIcon icon={faBook} /> Registro</Link>
-  
-     Separador */}
-
-
-
-                        <Link to="/ventas/1" className="nav-link d-flex align-items-center">
-                            <FontAwesomeIcon icon={faMoneyBill} size="2x" />
-                            <span className="ms-2">VENTA DIRECTA</span>
-                        </Link>
-                        <div className="mx-3 border-end"></div>
-                        <Link to="/ordenes" className="nav-link d-flex align-items-center">
-                            <FontAwesomeIcon icon={faClipboardList} size="2x" />
-                            <span className="ms-2">ÓRDENES</span>
-                        </Link>
-                        <div className="mx-3 border-end"></div>
-                        <Link to="/calendario" className="nav-link d-flex align-items-center">
-                            <FontAwesomeIcon icon={faReceipt} size="2x" />
-                            <span className="ms-2">TICKETS</span>
-                        </Link>
-
-                        <div className="mx-3 border-end"></div>
-                        <Link to="/clientes" className="nav-link d-flex align-items-center">
-                            <FontAwesomeIcon icon={faReceipt} size="2x" />
-                            <span className="ms-2">CUENTAS</span>
-                        </Link>
-
-
-
-
-                        <div className="mx-3 border-end"></div>
-                        <div className="mx-3 border-end"></div>
+        
+        <div className="mx-3 border-end"></div>
                         <div className="mx-3 border-end"></div>
 
 
-                        <NavItem className="d-flex align-items-center navbar-container">
-                            <FontAwesomeIcon icon={faUserCircle} size="3x" style={{ color: '#FFFFFF' }} />
-                            <span style={{ color: '#FFFFFF' }}
-                                className="ms-2 navbar-container">{nombreUsuario}</span>
-                            {/*   <img src="src\assets\img\simbolo.png" alt="User" className="rounded-circle ms-2" style={{ width: '30px', height: '30px' }} />
-                       */} </NavItem>
-                        {/* Separador */}
-                        <div className="mx-3 border-end"></div>
-                        <div className="mx-3 border-end"></div>
-  {/* Botón de Soporte */}
-  <div className="mx-3 border-end"></div>
-                        <Link to="/soporte" className="nav-link d-flex align-items-center">
-                            <FontAwesomeIcon icon={faTools} size="2x" />
-                            <span className="ms-2">SOPORTE</span>
-                        </Link>
+     
+        <Nav className="ms-auto w-100 justify-content-between align-items-center">
+
+ 
+
+            <div className="d-flex align-items-center">
+            <Link to="/calendispo" className="nav-link d-flex align-items-center">
+                    <FontAwesomeIcon icon={faReceipt} size="2x" />
+                    <span className="ms-2">RESERVA</span>
+                </Link>
+                <div className="mx-3 border-end"></div>
+                <Link to="/ventas" className="nav-link d-flex align-items-center">
+                    <FontAwesomeIcon icon={faReceipt} size="2x" />
+                    <span className="ms-2">VENTA</span>
+                </Link>
+                <div className="mx-3 border-end"></div>
+ 
+                <div className="mx-3 border-end"></div>
+
+                <Link to="/calendario" className="nav-link d-flex align-items-center">
+                    <FontAwesomeIcon icon={faTable} size="2x" />
+                    <span className="ms-2">AGENDA</span>
+                </Link>
+                <div className="mx-3 border-end"></div>
+
+                <Link to="/clientes" className="nav-link d-flex align-items-center">
+                    <FontAwesomeIcon icon={faUser} size="2x" />
+                    <span className="ms-2">CLIENTES</span>
+                </Link>
+            </div>
+ 
 
 
-                        <div className="mx-3 border-end"></div>
-                        <Link className="nav-link d-flex align-items-center" onClick={handleAbrirCajon}>
-                            <FontAwesomeIcon icon={faCashRegister} size="2x" />
-                            <span className="ms-2">ABRIR CAJÓN</span>
-                        </Link>
+            <div className="d-flex align-items-center">
+                <FontAwesomeIcon icon={faUserCircle} size="3x" style={{ color: '#FFFFFF' }} />
+                <span style={{ color: '#FFFFFF' }} className="ms-2">{nombreUsuario}</span>
+            </div>
 
-                        <div className="mx-3 border-end"></div>
-                        <div className="mx-3 border-end"></div>
-                        <NavLink href="/" onClick={handleBlock}>Salir <FontAwesomeIcon icon={faSignOutAlt} /></NavLink>
+            <div className="d-flex align-items-center">
+                <Link to="/soporte" className="nav-link d-flex align-items-center">
+                    <FontAwesomeIcon icon={faTools} size="2x" />
+                    <span className="ms-2">SOPORTE</span>
+                </Link>
+                <div className="mx-3 border-end"></div>
 
-                    </Nav>
+                <NavLink href="/" onClick={handleBlock}>
+                    Salir <FontAwesomeIcon icon={faSignOutAlt} />
+                </NavLink>
+            </div>
 
-                    <Nav className="sign-out-button ms-auto ">
-                        {/*<Nav.Link className='btn-accion-black'>
-                            <BtnOut />
-                        </Nav.Link>*/}
-                        <Button variant="outline-success" onClick={handleOffcanvasToggle}>
-                            ☰
-                        </Button>
-                    </Nav>
-                </Container>
-            </Navbar>
+            <Button variant="outline-light" onClick={handleOffcanvasToggle}>
+  ☰ {/* Icono de menú */}
+</Button>
+
+        </Nav>
+    </Container>
+</Navbar>
+
 
             <div className="linea"></div>
 
             
-            <Offcanvas show={showOffcanvas} onHide={handleOffcanvasToggle} placement="end" backdrop={false} className='offcanvas-chico'>
+            <Offcanvas show={showOffcanvas} onHide={handleOffcanvasToggle} placement="start" backdrop={false} className='offcanvas-chico'>
                 <Offcanvas.Header>
                     <Offcanvas.Title>
-                        <Button variant="outline-success" onClick={handleOffcanvasToggle}>
-                            ☰
-                        </Button>
+                    <Link to="/" onClick={handleOffcanvasToggle}>
+                <img
+                    alt="Logo"
+                    src={logoNeerd}
+                    width="auto"
+                    height="40px"
+                    className="d-inline-block align-top"
+                />
+            </Link>
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -252,7 +242,8 @@ function Layout({ children }) {
                                 <Link to="/mesas" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Mesas</ListGroup.Item></Link> 
                           
                      */}
-                                <Link to="/clientes" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Estudiantes</ListGroup.Item></Link>
+                                <Link to="/dashboard" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Dashboard</ListGroup.Item></Link>
+                                <Link to="/clientes" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Clientes</ListGroup.Item></Link>
                                 <Link to="/usuarios" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Usuarios</ListGroup.Item></Link>
 
                                 <Link to="/ordenes" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Órdenes</ListGroup.Item></Link>
@@ -265,10 +256,7 @@ function Layout({ children }) {
                                 <Link to="/products" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Productos</ListGroup.Item></Link>
                                 <Link to="/calendario" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Calendario</ListGroup.Item></Link>
                                 <Link to="/soporte" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Soporte</ListGroup.Item></Link>
-
-                                <Link to="/ejecutar" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>CMD</ListGroup.Item></Link>
-                                <Link to="/" className="linkBtn-black" onClick={apagarSistema}><ListGroup.Item className='Item'>APAGAR SISTEMA</ListGroup.Item></Link>
-                                
+    
 
                             </>
                         )}
