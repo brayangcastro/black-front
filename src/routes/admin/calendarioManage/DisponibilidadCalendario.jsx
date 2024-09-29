@@ -143,15 +143,16 @@ const DisponibilidadCalendario = ({
         </div>
 
         <div className="total-cost">
-          <h4>Total: ${totalCost.toFixed(2)}</h4>
-          <button
-            className="process-booking-button"
-            disabled={selectedTimes.length === 0}
-            onClick={handleProcessBooking}
-          >
-            Procesar Reserva
-          </button>
-        </div>
+  <h4>Total: ${Number(totalCost).toFixed(2)}</h4>
+  <button
+    className="process-booking-button"
+    disabled={selectedTimes.length === 0}
+    onClick={handleProcessBooking}
+  >
+    Procesar Reserva
+  </button>
+</div>
+
       </div>
     </div>
   );

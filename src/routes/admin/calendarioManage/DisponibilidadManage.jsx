@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DisponibilidadCalendario from './DisponibilidadCalendario';
 import axios from 'axios';
 import apiUrls from '../../../api';
-import MapaOcupacion from './MapaOcupacion'; // Importa el nuevo componente
+import MapaOcupacion from './MapaOcupacion';
 
 const DisponibilidadManage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -12,6 +12,9 @@ const DisponibilidadManage = () => {
   const [selectedTimes, setSelectedTimes] = useState([]); // Horarios seleccionados
   const [totalCost, setTotalCost] = useState(0); // Total acumulado
   const [occupancyData, setOccupancyData] = useState([]);
+
+  // Verifica cuántas veces se renderiza el componente
+  console.log("Renderizando el componente DisponibilidadManage");
 
   const handleSpaceClick = (space) => {
     if (occupancyData.includes(space.id.toString())) {
@@ -26,7 +29,6 @@ const DisponibilidadManage = () => {
       try {
         const response = await axios.post(apiUrls.obtenerEspacios);
         setSpaces(response.data);
-        console.log('setSpaces', response.data);
 
         if (response.data.length > 0) {
           setSelectedSpace(0);
@@ -47,7 +49,7 @@ const DisponibilidadManage = () => {
             fecha: formatDateToYYYYMMDD(selectedDate),
             espacioId: spaces[selectedSpace]?.id.toString(),
           });
-          console.log("obtenerDisponibilidadPorFechaYEspacio",response.data)
+
           setAvailability(response.data);
 
           // Actualiza occupancyData con los espacios ocupados
@@ -65,9 +67,27 @@ const DisponibilidadManage = () => {
   }, [selectedDate, selectedSpace, spaces]);
 
   const handleTimeSelection = (time) => {
-    setSelectedTimes((prevTimes) =>
-      prevTimes.includes(time) ? prevTimes.filter((t) => t !== time) : [...prevTimes, time]
-    );
+    const selectedSpaceCost = parseFloat(spaces[selectedSpace]?.costo) || 0;
+
+    let costAlreadyUpdated = false; // Flag temporal para evitar la doble suma
+    
+    setSelectedTimes((prevTimes) => {
+      if (prevTimes.includes(time)) {
+        console.log("Horario deseleccionado, restando costo:", selectedSpaceCost);
+        if (!costAlreadyUpdated) {
+          setTotalCost((prevTotalCost) => prevTotalCost - selectedSpaceCost);
+          costAlreadyUpdated = true;
+        }
+        return prevTimes.filter((t) => t !== time);
+      } else {
+        console.log("Horario seleccionado, sumando costo:", selectedSpaceCost);
+        if (!costAlreadyUpdated) {
+          setTotalCost((prevTotalCost) => prevTotalCost + selectedSpaceCost);
+          costAlreadyUpdated = true;
+        }
+        return [...prevTimes, time];
+      }
+    });
   };
 
   const formatDateToYYYYMMDD = (date) => {
@@ -86,7 +106,6 @@ const DisponibilidadManage = () => {
       totalCost: totalCost,
       spaceCost: spaces[selectedSpace]?.costo,
     };
-    console.log('bookingDetails', bookingDetails);
 
     try {
       const response = await axios.post(apiUrls.procesarReserva, { bookingDetails });

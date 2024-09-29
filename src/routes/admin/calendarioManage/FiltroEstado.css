@@ -1,0 +1,105 @@
+.filtro-estado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .filtro-estado-container h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .custom-checkbox {
+    position: relative;
+    display: inline-block;
+    padding-left: 40px; /* Aumentamos el espacio para un checkbox más grande */
+    font-size: 18px; /* Tamaño de texto más grande */
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-checkbox:hover {
+    color: #007bff;
+  }
+  
+  .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px; /* Checkbox más grande */
+    width: 30px;  /* Checkbox más grande */
+    background-color: #eee;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .custom-checkbox:hover .checkmark {
+    background-color: #ddd;
+  }
+  
+  .custom-checkbox input:checked ~ .checkmark {
+    background-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+  }
+  
+  .custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .custom-checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Colores específicos para cada estado */
+  .checkbox-estado input[value="DISPONIBLE"] ~ .checkmark {
+    background-color: #28a745; /* Verde para disponible */
+  }
+  
+  .checkbox-estado input[value="PROCESANDO"] ~ .checkmark {
+    background-color: #ffc107; /* Amarillo para procesando */
+  }
+  
+  .checkbox-estado input[value="CONFIRMADO"] ~ .checkmark {
+    background-color: #17a2b8; /* Azul claro para confirmado */
+  }
+  
+  .checkbox-estado input:checked ~ .checkmark {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  

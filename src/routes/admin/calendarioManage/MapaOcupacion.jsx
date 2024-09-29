@@ -53,7 +53,7 @@ const MapaOcupacion = ({ spaces }) => {
 
             // Filtrar los espacios donde `disponible` sea `0` (ocupados)
             const espaciosOcupados = response.data
-                .filter((slot) => slot.disponible === '0')
+                .filter((slot) => slot.disponible == 1)
                 .map((slot) => slot.espacioId);
 
             setOccupancyData(espaciosOcupados);
@@ -78,7 +78,7 @@ const MapaOcupacion = ({ spaces }) => {
 
     // Verificar si el espacio está ocupado
     const isOccupied = occupancyData.includes(space.id.toString()); // Convertir space.id a string si es necesario
-    if (isOccupied) {
+    if (!isOccupied) {
       alert('Este espacio está ocupado en la fecha y hora seleccionadas.');
       return;
     }
@@ -117,29 +117,27 @@ const MapaOcupacion = ({ spaces }) => {
       console.error('Error al procesar la reserva:', error);
     }
   };
+  const scaleFactor = 0.75; // Escalar la imagen al 50% del tamaño original
+
 
   return (
     <div className="mapa-ocupacion-container">
       {/* Selectores de Fecha y Hora */}
       <div className="date-time-selectors">
+      <div>
         <label>Seleccione Fecha:</label>
         <DatePicker
-  selected={selectedDate}
-  onChange={(date) => {
-    setSelectedDate(date);
-    console.log("Fecha seleccionada:", date);  // Verifica que la fecha esté cambiando aquí
-  }}
-  dateFormat="yyyy-MM-dd"
-/>
-
-
-
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          dateFormat="yyyy-MM-dd"
+        />
+      </div>
+      <div>
         <label>Seleccione Hora:</label>
         <select
           value={selectedTime}
           onChange={(e) => setSelectedTime(e.target.value)}
           className="time-select"
-          disabled={availableHours.length === 0}
         >
           {availableHours.length === 0 ? (
             <option value="">No hay horarios disponibles</option>
@@ -155,28 +153,39 @@ const MapaOcupacion = ({ spaces }) => {
           )}
         </select>
       </div>
+    </div>
 
       {/* Mapa y Espacios */}
       <div className="map-container">
-        <img src={mapa} alt="Mapa del lugar" className="mapa-imagen" />
-        {spaces.map((space) => {
-    const isOccupied = occupancyData.includes(space.id.toString());  // Convertimos a string para comparar correctamente
+      <img 
+  src={mapa} 
+  alt="Mapa del lugar" 
+  className="mapa-imagen" 
+  style={{
+    transform: `scale(${scaleFactor})`, // Aplica el factor de escala
+    transformOrigin: 'top left' // Asegura que la escala se aplique desde la esquina superior izquierda
+  }}
+/>
 
-    return (
-        <div
-            key={space.id}
-            className={`espacio ${isOccupied ? 'ocupado' : 'disponible'}`}  // Aplica las clases CSS
-            style={{
-                top: `${space.ubicacion.y}px`,
-                left: `${space.ubicacion.x}px`,
-                width: `${space.dimensiones.width}px`,
-                height: `${space.dimensiones.height}px`,
-            }}
-            onClick={() => handleSpaceClick(space)}
-            title={space.name}
-        />
-    );
+{spaces.map((space) => {
+  const isOccupied = occupancyData.includes(space.id.toString());
+
+  return (
+    <div
+      key={space.id}
+      className={`espacio ${isOccupied ? 'disponible' : 'ocupado'}`}  
+      style={{
+        top: `${space.ubicacion.y * scaleFactor+10}px`,  // Aplica el factor de escala a la posición Y
+        left: `${space.ubicacion.x * scaleFactor+10}px`, // Aplica el factor de escala a la posición X
+        width: `${space.dimensiones.width * scaleFactor}px`, // Aplica el factor de escala a la anchura
+        height: `${space.dimensiones.height * scaleFactor}px`, // Aplica el factor de escala a la altura
+      }}
+      onClick={() => handleSpaceClick(space)}
+      title={space.name}
+    />
+  );
 })}
+
 
       </div>
 

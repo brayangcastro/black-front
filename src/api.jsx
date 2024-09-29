@@ -25,6 +25,8 @@ const sincroUrl = `${baseUrl}/sincro`;
 
 const cuentasUrl = `${baseUrl}/cuentas`;
 
+const rifasUrl = `${baseUrl}/rifas`;
+
 
 
 
@@ -234,7 +236,33 @@ const apiUrls = {
     agregarCuenta: `${cuentasUrl}/agregarCuenta`,
     actualizarCuenta: `${cuentasUrl}/actualizarCuenta`,
     eliminarCuenta: `${cuentasUrl}/eliminarCuenta`,
- 
+
+
+
+    eliminarCuenta: `${rifasUrl}/eliminarCuenta`,
+
+    
+   getBoletosPorEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/boletos`,  // URL dinámica para boletos por evento
+    getEventoPorID: (eventoID) => `${rifasUrl}/eventos/${eventoID}`,  // URL dinámica para obtener evento por ID
+    cambiarEstadoBoleto: `${rifasUrl}/boletos/cambiar-estado`,  // URL para cambiar el estado del boleto
+  // Agregamos la nueva URL para obtener la lista de eventos
+  getEventos: `${rifasUrl}/eventos`,  // URL para obtener todos los eventos
+
+  // Para agregar un evento
+  agregarEvento: `${rifasUrl}/agregarEvento`,  // URL para agregar un evento
+
+  // Para eliminar un evento
+  eliminarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}`,  // URL para eliminar un evento
+
+  // Para reiniciar un evento
+  reiniciarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/reiniciar`,  // URL para reiniciar un evento
+
+  // Para cancelar un evento
+  cancelarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/cancelar`,  // URL para cancelar un evento
+
+  // Para restaurar un evento cancelado
+  restaurarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/restaurar`  // URL para restaurar un evento cancelado
+
 };
 
 export default apiUrls;

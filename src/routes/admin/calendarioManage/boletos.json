@@ -1,0 +1,24 @@
+[
+    { "numero": 1, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 2, "selected": false, "ocupado": true, "costo": 10 },
+    { "numero": 3, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 4, "selected": false, "ocupado": true, "costo": 10 },
+    { "numero": 5, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 6, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 7, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 8, "selected": false, "ocupado": true, "costo": 10 },
+    { "numero": 9, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 10, "selected": false, "ocupado": true, "costo": 10 },
+    { "numero": 11, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 12, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 13, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 14, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 15, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 16, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 17, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 18, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 19, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 20, "selected": false, "ocupado": false, "costo": 10 },
+    { "numero": 21, "selected": false, "ocupado": false, "costo": 10 }
+  ]
+  

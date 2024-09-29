@@ -13,8 +13,9 @@ import CalendarioManage from "./calendarioManage/calendarioManage";
 import InventarioManage from "./productsManage/inventarioManage";
 import IngresoManage from "./productsManage/IngresoManage";
 import CuentasManage from "./cuentasManage/cuentasManage";
+import BoletosListManage from "./boletosManage/boletosManage";
 
 export { UsuariosManage, UserManage, TicketsManage, ProductsManage,
     ConversManage,ClientesManage,TorneosManage,
     Dashboard,OrdenesManage,VentasManage,MesasManage, CalendarioManage,
-    InventarioManage,IngresoManage,CuentasManage};
+    InventarioManage,IngresoManage,CuentasManage,BoletosListManage};

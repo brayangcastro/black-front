@@ -21,7 +21,8 @@ const CalendarioManageView = ({
     endDate,
     updateDateRange,
     loadEventsAndAvailability,
-    editarEvento
+    editarEvento,
+    spaces
 }) => {
     const [loading, setLoading] = useState(true);
     const [showAgregarDisponibilidad, setShowAgregarDisponibilidad] = useState(false);
@@ -37,8 +38,7 @@ const CalendarioManageView = ({
     const [isUnavailable, setIsUnavailable] = useState(false);
     const [selectedViewDate, setSelectedViewDate] = useState(new Date());
     const [newEventSpace, setNewEventSpace] = useState(null); // Nuevo estado para el espacio
-
-    const spaces = Array.from({ length: 11 }, (_, i) => i + 1); // Espacios del 1 al 11
+ 
 
     useEffect(() => {
         const startOfWeek = new Date(selectedViewDate);
@@ -193,23 +193,24 @@ const CalendarioManageView = ({
                     </div>
                    
                     <table>
-                        <thead>
+                    <thead>
                             <tr>
                                 <th style={{ border: '3px solid #6D7178', padding: '12px', textAlign: 'center', backgroundColor: '#D8DBDB' }}>Horario</th>
                                 {spaces.map((space) => (
-                                    <th key={space} style={{ border: '3px solid #6D7178', padding: '12px', textAlign: 'center', backgroundColor: '#D8DBDB' }}>
-                                        Espacio {space}
+                                    <th key={space.id} style={{ border: '3px solid #6D7178', padding: '12px', textAlign: 'center', backgroundColor: '#D8DBDB' }}>
+                                        {space.name} {/* Display the name of the cubicle */}
                                     </th>
                                 ))}
                             </tr>
                         </thead>
+
                         <tbody>
                             {hours.map((hour, hourIndex) => (
                                 <tr key={hourIndex} style={{ border: '3px solid #6D7178' }}>
                                     <td style={{ border: '3px solid #6D7178', padding: '12px', textAlign: 'center', backgroundColor: '#D8DBDB' }}>{hour}</td>
                                     {spaces.map((space) => {
-    const eventsAtThisTime = findEventsBySpaceAndHour(space, hour);
-    const availability = getAvailabilityBySpaceAndHour(space, hour);
+    const eventsAtThisTime = findEventsBySpaceAndHour(space.id, hour);
+    const availability = getAvailabilityBySpaceAndHour(space.id, hour);
     const availabilityText = `${availability.EspaciosDisponibles} espacios disponibles`;
 
     const cellStyle = {
@@ -224,7 +225,7 @@ const CalendarioManageView = ({
         <td
             key={`${space}-${hour}`}
             style={cellStyle}
-            onClick={() => handleCellClick(space, hour, selectedViewDate)}
+            onClick={() => handleCellClick(space.id, hour, selectedViewDate)}
         >
             {eventsAtThisTime.map(event => (
                 <div key={event.id} className={`event ${event.status.toLowerCase()}`}>
@@ -234,7 +235,7 @@ const CalendarioManageView = ({
             <div className="capacity-info">
                 {availabilityText}
             </div>
-            <div className="edit-availability" onClick={(e) => { e.stopPropagation(); handleEditAvailability(availability, space, hour, selectedViewDate); }} style={{ cursor: 'pointer', position: 'absolute', bottom: '5px', right: '5px', backgroundColor: '#f8f9fa', padding: '2px 5px', borderRadius: '3px' }}>
+            <div className="edit-availability" onClick={(e) => { e.stopPropagation(); handleEditAvailability(availability, space.id, hour, selectedViewDate); }} style={{ cursor: 'pointer', position: 'absolute', bottom: '5px', right: '5px', backgroundColor: '#f8f9fa', padding: '2px 5px', borderRadius: '3px' }}>
                 Editar
             </div>
         </td>

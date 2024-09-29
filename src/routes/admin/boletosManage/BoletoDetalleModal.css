@@ -1,0 +1,73 @@
+.modal-content {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.boleto-info-card {
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.boleto-info-card p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.badge-status {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.btn-action {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.btn-action:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #ffa500;
+    color: white;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}

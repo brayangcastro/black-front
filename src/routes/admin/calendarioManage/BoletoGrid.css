@@ -1,0 +1,200 @@
+/* Filtros */
+.filtros {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filtro-btn {
+    padding: 12px 25px;
+    background-color: #f1f1f1;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filtro-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.filtro-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Grid de boletos responsivo */
+.boleto-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Adaptación responsiva del grid de boletos */
+@media (min-width: 1200px) {
+    .boleto-grid {
+        grid-template-columns: repeat(10, 1fr); /* 10 columnas para pantallas grandes */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .boleto-grid {
+        grid-template-columns: repeat(8, 1fr); /* 8 columnas para pantallas medianas */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .boleto-grid {
+        grid-template-columns: repeat(6, 1fr); /* 6 columnas para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 767px) {
+    .boleto-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas móviles */
+    }
+}
+
+/* Estilo de cada boleto */
+.boleto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boleto:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Estados de boletos */
+.boleto.disponible {
+    background-color: #e0f7e0;
+    border-color: #388e3c;
+}
+
+.boleto.procesando {
+    background-color: #fff3cd;
+    border-color: #ffcc00;
+    cursor: not-allowed;
+}
+
+.boleto.confirmado {
+    background-color: #cce5ff;
+    border-color: #007bff;
+    cursor: not-allowed;
+}
+
+.boleto.reservado,
+.boleto.vendido {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    cursor: not-allowed;
+}
+
+/* Boleto seleccionado */
+.boleto.selected {
+    background-color: #4caf50;
+    color: white;
+    border-color: #388e3c;
+}
+
+.boleto .icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.boleto-numero {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Evita cambios de color en boletos ocupados */
+.boleto:hover:not(.ocupado) {
+    background-color: #e0f7fa;
+}
+
+.boleto.ocupado {
+    cursor: not-allowed;
+}
+
+/* Estado del boleto */
+.estado-boleto {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: red;
+}
+
+/* Overlay para mostrar estado de venta */
+.overlay-cross {
+    font-size: 50px;
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* Imagen del evento */
+.evento-imagen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Detalles del evento */
+.evento-detalles {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.evento-detalles h3 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.evento-detalles p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Overlay para mostrar estado de venta */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Asegura que esté encima del boleto */
+}
+
+.overlay-cross {
+    font-size: 50px;
+    color: #f44336;
+    font-weight: bold;
+}

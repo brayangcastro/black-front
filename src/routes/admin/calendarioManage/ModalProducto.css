@@ -1,140 +1,111 @@
-/* ModalProducto.css */
-
+/* Fondo oscuro con efecto de desenfoque */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
-  
-  .modal-container {
-    background-color: #111; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    position: relative;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #fff; /* Blanco para el botón cerrar */
-    cursor: pointer;
-  }
-  
-  .modal-content {
-    padding: 20px;
-  }
-  
-  .space-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .option-group {
-    margin: 15px 0;
-  }
-  
-  .option-select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #222; /* Fondo oscuro para el select */
-    color: #fff; /* Texto blanco */
-    border: 1px solid #555; /* Borde gris oscuro */
-    border-radius: 5px;
-  }
-  
-  /* Estilos para los selectores de fecha y hora */
-  .date-time-selectors {
-    margin: 15px 0;
-    text-align: left;
-  }
-  
-  .date-time-selectors label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .react-datepicker-wrapper,
-  .react-time-picker {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .react-datepicker__input-container input,
-  .react-time-picker input {
-    width: 100%;
-    padding: 10px;
-    background-color: #222;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 5px;
-  }
-  
-  /* Estilos para el botón de verificar disponibilidad */
-  .check-availability-button {
-    background-color: #000; /* Botón negro */
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    width: 100%;
-  }
-  
-  .check-availability-button:hover {
-    background-color: #333; /* Cambio a gris oscuro */
-  }
-  
-  /* Estilos para el mensaje de disponibilidad */
-  .availability-message {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  /* Estilos para el botón de reservar */
-  .reserve-button {
-    background-color: #000; /* Botón negro */
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    width: 100%;
-  }
-  
-  .reserve-button:hover {
-    background-color: #333; /* Cambio a gris oscuro */
-  }
-  
-  /* Agregar transición suave para el cierre */
-  .modal-overlay,
-  .modal-container {
-    transition: opacity 0.3s ease-in-out;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Contenedor del modal */
+.modal-container {
+  background-color: #222; /* Fondo gris oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff; /* Blanco para el botón cerrar */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg); /* Efecto de rotación al pasar el cursor */
+}
+
+/* Contenido del modal */
+.modal-content {
+  padding: 20px;
+}
+
+/* Imagen del espacio */
+.space-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Grupo de opciones */
+.option-group {
+  margin: 15px 0;
+  text-align: left;
+}
+
+/* Select y inputs con estilo */
+.option-select,
+.option-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  border: 1px solid #555; /* Borde gris oscuro */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Alinear los inputs de personas y horas en una sola fila */
+.option-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.option-input-row {
+  width: 48%; /* Ajusta el ancho de los inputs dentro de la fila */
+}
+
+/* Estilo para el total calculado */
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #00ff7f; /* Verde brillante para resaltar el total */
+}
+
+/* Botón de reservar */
+.reserve-button {
+  background-color: #00ff7f; /* Verde brillante */
+  color: #111;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%; /* Ancho completo */
+}
+
+.reserve-button:hover {
+  background-color: #00cc66; /* Verde más oscuro al hacer hover */
+}

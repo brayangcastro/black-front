@@ -33,6 +33,7 @@ const CalendarioManage = () => {
     const [startDateMes, setStartDateMes] = useState(initialStartDate);
     const [endDateMes, setEndDateMes] = useState(initialEndDate);
 
+    const [spaces, setSpaces] = useState([]);
 
     useEffect(() => {
         // Al montar el componente, cargar los eventos y disponibilidad de la semana actual
@@ -44,7 +45,23 @@ const CalendarioManage = () => {
         console.log("viewMode:", viewMode);
     }, [viewMode]);
 
+    useEffect(() => {
+        const fetchSpaces = async () => {
+          try {
+            const response = await axios.post(apiUrls.obtenerEspacios);
+            setSpaces(response.data);
+            console.log('setSpaces', response.data);
     
+           
+          } catch (error) {
+            console.error('Error al obtener los espacios:', error);
+          }
+        };
+    
+        fetchSpaces();
+      }, []);
+
+
 
     useEffect(() => {
         const obtenerHorarios = async () => {
@@ -227,6 +244,7 @@ const CalendarioManage = () => {
                     updateDateRange={updateDateRangeSemana}
                     loadEventsAndAvailability={loadEventsAndAvailability}
                     editarEvento={editarEvento}
+                    spaces={spaces}
                 />
             ) : viewMode === 'mensual' ? (
                 <MensualManageView

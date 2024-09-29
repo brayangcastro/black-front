@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ModalProducto.css'; // Importa los estilos que diseñaremos para el modal
 
 const ModalProducto = ({ showModal, onClose, space }) => {
+  const [cantidadPersonas, setCantidadPersonas] = useState(1);
+  const [horas, setHoras] = useState(1);
+  const [tipoComida, setTipoComida] = useState('esencial');
+  const [total, setTotal] = useState(0);
+
+  // Definir los precios por tipo de comida
+  const preciosComida = {
+    esencial: 100,   // Precio por persona por hora
+    completo: 200,   // Precio por persona por hora
+    gourmet: 300     // Precio por persona por hora
+  };
+
+  // Función para calcular el total
+  const calcularTotal = () => {
+    const precioComida = preciosComida[tipoComida];
+    const nuevoTotal = precioComida * horas * cantidadPersonas;
+    setTotal(nuevoTotal);
+  };
+
+  const handleCantidadPersonasChange = (e) => {
+    setCantidadPersonas(e.target.value);
+    calcularTotal();
+  };
+
+  const handleHorasChange = (e) => {
+    setHoras(e.target.value);
+    calcularTotal();
+  };
+
+  const handleTipoComidaChange = (e) => {
+    setTipoComida(e.target.value);
+    calcularTotal();
+  };
+
   if (!showModal) return null;
 
   return (
@@ -19,28 +53,60 @@ const ModalProducto = ({ showModal, onClose, space }) => {
           <h2>{space.name}</h2>
           <p>{space.description || 'Descripción no disponible'}</p>
 
-          {/* Mostrar las opciones solo si el ID del espacio es igual a 1 */}
-          {space.id === 1 && (
+          {/* Mostrar las opciones solo si el ID del espacio es igual a 8 */}
+          {space.id === 11 && (
             <>
               <div className="option-group">
                 <label htmlFor="comida">Comida:</label>
-                <select id="comida" className="option-select">
+                <select
+                  id="comida"
+                  className="option-select"
+                  value={tipoComida}
+                  onChange={handleTipoComidaChange}
+                >
                   <option value="esencial">Esencial</option>
                   <option value="completo">Completo</option>
                   <option value="gourmet">Gourmet</option>
                 </select>
               </div>
 
-              <div className="option-group">
-                <label htmlFor="tiempo">Acomodo:</label>
-                <select id="tiempo" className="option-select">
-                  <option value="1hora">Herradura</option>
-                  <option value="2horas">Escuela</option>
-                  <option value="medioDia">Auditorio</option>
-                </select>
+              {/* Fila con cantidad de personas y horas */}
+              <div className="option-row">
+                <div className="option-group option-input-row">
+                  <label htmlFor="cantidadPersonas">Cantidad de personas:</label>
+                  <input
+                    type="number"
+                    id="cantidadPersonas"
+                    className="option-input"
+                    value={cantidadPersonas}
+                    onChange={handleCantidadPersonasChange}
+                    min="1"
+                  />
+                </div>
+
+                <div className="option-group option-input-row">
+                  <label htmlFor="horas">Horas:</label>
+                  <input
+                    type="number"
+                    id="horas"
+                    className="option-input"
+                    value={horas}
+                    onChange={handleHorasChange}
+                    min="1"
+                  />
+                </div>
               </div>
 
-              <button className="reserve-button" onClick={() => alert('Reservar ahora')}>
+              {/* Mostrar el total calculado */}
+              <div className="total">
+                <h3>Total: ${total}</h3>
+              </div>
+
+              {/* Botón de reservar */}
+              <button
+                className="reserve-button"
+                onClick={() => alert(`Reservar para ${cantidadPersonas} personas por ${horas} horas. Total: $${total}`)}
+              >
                 Reservar ahora
               </button>
             </>

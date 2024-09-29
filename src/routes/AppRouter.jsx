@@ -3,7 +3,7 @@ import { useNavigate, BrowserRouter, Routes, Route, Outlet  } from 'react-router
 import { Dashboard, NoAcceso, Examen, CambioContrasena } from './user/userRoutes';
 import { UsuariosManage, UserManage, TicketsManage, ProductsManage, ConversManage, ClientesManage,
     TorneosManage,OrdenesManage,VentasManage,MesasManage, CalendarioManage,
-    InventarioManage,IngresoManage,CuentasManage
+    InventarioManage,IngresoManage,CuentasManage,BoletosListManage
     , Dashboard as DasboardAdmin } from './admin/adminRoutes'
 
 import Layout from '../Layout';
@@ -18,6 +18,9 @@ import AccessScreen from '../components/AccessScreen';
 import IngresosView from '../components/IngresosView';
 import OrderDetails from '../components/OrderDetails';
 import DisponibilidadManage from '../routes/admin/calendarioManage/DisponibilidadManage';
+import BoletosManage from '../routes/admin/calendarioManage/BoletoApp';
+ 
+import EventosManageView from '../components/EventosManageView';
  
 const initialState = {
     tipoUsuario: 1,
@@ -69,7 +72,12 @@ function AppRouter() {
                         <Route path="/" element={<Layout><DisponibilidadManage /></Layout>} />
  
                         <Route path="/calendispo" element={<Layout><DisponibilidadManage /></Layout>} />
-
+                        <Route path="/chatbot" element={<Layout><ConversManage /></Layout>} />
+                        <Route path="/boletos" element={<Layout><BoletosManage /></Layout>} />
+                        
+                        <Route path="/rifas" element={<Layout><EventosManageView /></Layout>} />
+                        <Route path="/lista_boletos" element={<Layout><BoletosListManage /></Layout>} />
+                        
                         
                          
                         <Route path="/cuentas" element={<Layout><CuentasManage /></Layout>} />

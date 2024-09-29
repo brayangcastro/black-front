@@ -155,8 +155,8 @@ function Layout({ children }) {
 
 
      
-        <Nav className="ms-auto w-100 justify-content-between align-items-center">
-
+                        <Nav className="d-none d-md-flex w-100 justify-content-between align-items-center">
+ 
  
 
             <div className="d-flex align-items-center">
@@ -219,15 +219,14 @@ function Layout({ children }) {
             <Offcanvas show={showOffcanvas} onHide={handleOffcanvasToggle} placement="start" backdrop={false} className='offcanvas-chico'>
                 <Offcanvas.Header>
                     <Offcanvas.Title>
-                    <Link to="/" onClick={handleOffcanvasToggle}>
-                <img
+                   
+                <img onClick={handleOffcanvasToggle}
                     alt="Logo"
                     src={logoNeerd}
                     width="auto"
                     height="40px"
-                    className="d-inline-block align-top"
-                />
-            </Link>
+                    className="d-inline-block align-top" 
+                />  
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -242,9 +241,14 @@ function Layout({ children }) {
                                 <Link to="/mesas" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Mesas</ListGroup.Item></Link> 
                           
                      */}
+                                <Link to="/chatbot" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Chatbot</ListGroup.Item></Link>
                                 <Link to="/dashboard" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Dashboard</ListGroup.Item></Link>
                                 <Link to="/clientes" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Clientes</ListGroup.Item></Link>
                                 <Link to="/usuarios" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Usuarios</ListGroup.Item></Link>
+
+                                <Link to="/boletos" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Boletos</ListGroup.Item></Link>
+
+                                <Link to="/rifas" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Conferencias</ListGroup.Item></Link>
 
                                 <Link to="/ordenes" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Órdenes</ListGroup.Item></Link>
                                 <Link to="/ventas" className="linkBtn-black" onClick={handleOffcanvasToggle}><ListGroup.Item className='Item'>Ventas</ListGroup.Item></Link>

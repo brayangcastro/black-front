@@ -1,0 +1,88 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Hacemos el modal un poco más ancho */
+    width: 100%;
+    text-align: center;
+  }
+  
+  h2, h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  .seleccion-grid {
+    margin-bottom: 20px;
+  }
+  
+  .seleccion-grid div {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  input {
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    padding: 5px;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .btn-procesar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-procesar:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-cerrar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-cerrar:hover {
+    background-color: #e53935;
+  }
+  
