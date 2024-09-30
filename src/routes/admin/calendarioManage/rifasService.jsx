@@ -1,12 +1,10 @@
 import axios from 'axios';
-
-// Define la URL base de tu backend
-const API_BASE_URL = 'http://localhost:3001/rifas'; // Asegúrate de que coincide con la configuración del backend
+import apiUrls from '../../../api';  // Asegúrate de que la ruta sea correcta
 
 // Servicio para obtener boletos por evento
 export const obtenerBoletosPorEvento = async (eventoID) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/eventos/${eventoID}/boletos`);
+        const response = await axios.get(apiUrls.getBoletosPorEvento(eventoID)); // Usamos apiUrls
         return response.data; // Retorna los boletos obtenidos
     } catch (error) {
         console.error("Error al obtener los boletos:", error);
@@ -17,7 +15,7 @@ export const obtenerBoletosPorEvento = async (eventoID) => {
 // Servicio para obtener la información del evento
 export const obtenerEventoPorID = async (eventoID) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/eventos/${eventoID}`);
+        const response = await axios.get(apiUrls.getEventoPorID(eventoID)); // Usamos apiUrls
         return response.data;
     } catch (error) {
         console.error("Error al obtener el evento:", error);
@@ -28,7 +26,7 @@ export const obtenerEventoPorID = async (eventoID) => {
 // Servicio para cambiar el estado de un boleto
 export const cambiarEstadoBoleto = async (boletoID, nuevoEstado) => {
     try {
-        const response = await axios.put(`${API_BASE_URL}/boletos/cambiar-estado`, {
+        const response = await axios.put(apiUrls.cambiarEstadoBoleto, {  // Usamos apiUrls
             boletoID,
             nuevoEstado
         });
