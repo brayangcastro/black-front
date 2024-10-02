@@ -5,45 +5,49 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  background-color: rgba(0, 0, 0, 0.85) !important; /* Fondo oscuro con más opacidad */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
 }
 
 /* Contenedor del modal */
 .modal-container {
-  background-color: #222; /* Fondo gris oscuro */
+  background-color: #222 !important; /* Fondo gris oscuro */
   color: #fff; /* Texto blanco */
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
   text-align: center;
   position: relative;
 }
 
-/* Botón de cerrar */
+/* Botón de cerrar, más visible, sin parecer una "X" básica */
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   font-size: 24px;
   color: #fff; /* Blanco para el botón cerrar */
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: color 0.3s ease;
+  z-index: 10; /* Para asegurar que esté al frente */
 }
 
 .close-button:hover {
-  transform: rotate(90deg); /* Efecto de rotación al pasar el cursor */
+  color: #ff4c4c; /* Rojo claro al hacer hover */
+  transform: scale(1.2); /* Efecto de zoom suave */
 }
 
 /* Contenido del modal */
 .modal-content {
+  background-color: #222 !important;
   padding: 20px;
 }
 
@@ -51,8 +55,9 @@
 .space-image {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra en la imagen */
 }
 
 /* Grupo de opciones */
@@ -67,9 +72,9 @@
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  background-color: #333; /* Fondo oscuro */
-  color: #fff; /* Texto blanco */
-  border: 1px solid #555; /* Borde gris oscuro */
+  background-color: #333 !important; /* Fondo oscuro */
+  color: #fff !important; /* Texto blanco */
+  border: 1px solid #555 !important; /* Borde gris oscuro */
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
@@ -89,13 +94,13 @@
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
-  color: #00ff7f; /* Verde brillante para resaltar el total */
+  color: #00ff7f !important; /* Verde brillante para resaltar el total */
 }
 
 /* Botón de reservar */
 .reserve-button {
-  background-color: #00ff7f; /* Verde brillante */
-  color: #111;
+  background-color: #00ff7f !important; /* Verde brillante */
+  color: #111 !important;
   border: none;
   padding: 15px 20px;
   cursor: pointer;
@@ -103,9 +108,9 @@
   font-size: 16px;
   transition: background-color 0.3s ease;
   margin-top: 20px;
-  width: 100%; /* Ancho completo */
+  width: 100% !important; /* Ancho completo */
 }
 
 .reserve-button:hover {
-  background-color: #00cc66; /* Verde más oscuro al hacer hover */
+  background-color: #00cc66 !important; /* Verde más oscuro al hacer hover */
 }

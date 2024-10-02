@@ -242,26 +242,25 @@ const apiUrls = {
     eliminarCuenta: `${rifasUrl}/eliminarCuenta`,
 
     
-   getBoletosPorEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/boletos`,  // URL dinámica para boletos por evento
-    getEventoPorID: (eventoID) => `${rifasUrl}/eventos/${eventoID}`,  // URL dinámica para obtener evento por ID
-    cambiarEstadoBoleto: `${rifasUrl}/boletos/cambiar-estado`,  // URL para cambiar el estado del boleto
-  // Agregamos la nueva URL para obtener la lista de eventos
-  getEventos: `${rifasUrl}/eventos`,  // URL para obtener todos los eventos
+   getBoletosPorEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/boletos`,   
+    getEventoPorID: (eventoID) => `${rifasUrl}/eventos/${eventoID}`,  
+    cambiarEstadoBoleto: `${rifasUrl}/boletos/cambiar-estado`,  
+  getEventosRifa: `${rifasUrl}/eventos`,   
 
   // Para agregar un evento
-  agregarEvento: `${rifasUrl}/agregarEvento`,  // URL para agregar un evento
+  agregarEventoRifa: `${rifasUrl}/agregarEvento`,  // URL para agregar un evento
 
   // Para eliminar un evento
-  eliminarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}`,  // URL para eliminar un evento
+  eliminarEventoRifa: (eventoID) => `${rifasUrl}/eventos/${eventoID}`,  // URL para eliminar un evento
 
   // Para reiniciar un evento
-  reiniciarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/reiniciar`,  // URL para reiniciar un evento
+  reiniciarEventoRifa: (eventoID) => `${rifasUrl}/eventos/${eventoID}/reiniciar`,  // URL para reiniciar un evento
 
   // Para cancelar un evento
-  cancelarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/cancelar`,  // URL para cancelar un evento
+  cancelarEventoRifa: (eventoID) => `${rifasUrl}/eventos/${eventoID}/cancelar`,  // URL para cancelar un evento
 
   // Para restaurar un evento cancelado
-  restaurarEvento: (eventoID) => `${rifasUrl}/eventos/${eventoID}/restaurar`  // URL para restaurar un evento cancelado
+  restaurarEventoRIfa: (eventoID) => `${rifasUrl}/eventos/${eventoID}/restaurar`  // URL para restaurar un evento cancelado
 
 };
 

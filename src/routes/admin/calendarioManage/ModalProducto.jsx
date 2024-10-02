@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ModalProducto.css'; // Importa los estilos que diseñaremos para el modal
 
 const ModalProducto = ({ showModal, onClose, space }) => {
   const [cantidadPersonas, setCantidadPersonas] = useState(1);
   const [horas, setHoras] = useState(1);
-  const [tipoComida, setTipoComida] = useState('esencial');
-  const [total, setTotal] = useState(0);
+  const [tipoComida, setTipoComida] = useState("esencial");
+  const [total, setTotal] = useState(100);
 
   // Definir los precios por tipo de comida
   const preciosComida = {
@@ -36,12 +36,26 @@ const ModalProducto = ({ showModal, onClose, space }) => {
     calcularTotal();
   };
 
+  // Escuchar la tecla 'Esc' para cerrar el modal
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [onClose]);
+
   if (!showModal) return null;
 
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <button className="close-button" onClick={onClose}>
+        <button className="close-button" onClick={onClose} aria-label="Cerrar modal">
           &times;
         </button>
         <div className="modal-content">
@@ -53,7 +67,7 @@ const ModalProducto = ({ showModal, onClose, space }) => {
           <h2>{space.name}</h2>
           <p>{space.description || 'Descripción no disponible'}</p>
 
-          {/* Mostrar las opciones solo si el ID del espacio es igual a 8 */}
+          {/* Mostrar las opciones solo si el ID del espacio es igual a 11 */}
           {space.id === 11 && (
             <>
               <div className="option-group">

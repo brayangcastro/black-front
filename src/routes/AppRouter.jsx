@@ -70,6 +70,7 @@ function AppRouter() {
                 {isAuthenticated ? (
                     <Route element={<Outlet />}>
                         <Route path="/" element={<Layout><DisponibilidadManage /></Layout>} />
+                        <Route path="/mapa_dispo" element={<DisponibilidadManage />} />
  
                         <Route path="/calendispo" element={<Layout><DisponibilidadManage /></Layout>} />
                         <Route path="/chatbot" element={<Layout><ConversManage /></Layout>} />

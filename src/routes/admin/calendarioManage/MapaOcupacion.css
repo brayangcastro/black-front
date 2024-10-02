@@ -1,84 +1,37 @@
-/* Fondo negro para todo el contenedor */
-.mapa-ocupacion-container {
-  background-color: #1c1c1c; /* Negro elegante */
-  padding: 30px;
-  color: white; /* Texto en blanco */
-  font-family: 'Arial', sans-serif;
-}
-
-/* Coloca los selectores de fecha y hora en una fila */
-.date-time-selectors {
+.date-time-selectors-modern {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px; /* Espacio entre los elementos */
   margin-bottom: 20px;
-}
-
-/* Estilo para los campos de fecha y hora */
-.date-time-selectors label {
-  margin-right: 10px;
-}
-
-.date-time-selectors input,
-.date-time-selectors select {
+  background-color: #f8f9fa;
   padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  background-color: #333; /* Fondo oscuro */
-  color: white;
-  outline: none;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Cambio de color al pasar por encima */
-.date-time-selectors input:hover,
-.date-time-selectors select:hover {
-  background-color: #555; /* Un poco más claro al hacer hover */
-}
-
-/* Estilo para el mapa */
-.map-container {
-  position: relative;
-  margin: 0 auto; /* Centra el mapa */
+.selector-item {
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 2px solid white;
-  padding: 10px;
-  background-color: #222; /* Un tono más claro que el fondo */
-  width: fit-content; /* Acomoda el tamaño basado en el mapa */
-  margin: 0 auto; /* Centra el mapa */
-}
- 
-
-/* Imagen del mapa */
-.mapa-imagen {
-  
-  border-radius: 8px; /* Bordes redondeados */
+  gap: 10px;
 }
 
-/* Estilo para los recuadros (espacios) */
-.espacio {
-  position: absolute;
-  border: 2px solid black;
-  opacity: 0.4;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+.icon {
+  font-size: 1.5rem;
+  color: #007bff;
 }
 
-/* Estilos cuando está disponible */
-.disponible {
-  background-color: green;
+.date-picker-modern,
+.time-select-modern {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 200px;
 }
 
-/* Estilos cuando está ocupado */
-.ocupado {
-  background-color: red;
-}
-
-/* Estilo cuando el espacio se selecciona */
-.espacio:hover {
-  transform: scale(1.05); /* Un pequeño zoom */
+.date-picker-modern:hover,
+.time-select-modern:hover {
+  border-color: #007bff;
+  transition: border-color 0.3s ease;
 }
