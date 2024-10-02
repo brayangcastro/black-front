@@ -4,11 +4,12 @@ import './ModalProducto.css'; // Importa los estilos que diseñaremos para el mo
 const ModalProducto = ({ showModal, onClose, space }) => {
   const [cantidadPersonas, setCantidadPersonas] = useState(1);
   const [horas, setHoras] = useState(1);
-  const [tipoComida, setTipoComida] = useState("esencial");
-  const [total, setTotal] = useState(100);
+  const [tipoComida, setTipoComida] = useState("seleccione");
+  const [total, setTotal] = useState(0);
 
   // Definir los precios por tipo de comida
   const preciosComida = {
+    seleccione:0,
     esencial: 100,   // Precio por persona por hora
     completo: 200,   // Precio por persona por hora
     gourmet: 300     // Precio por persona por hora
@@ -78,6 +79,7 @@ const ModalProducto = ({ showModal, onClose, space }) => {
                   value={tipoComida}
                   onChange={handleTipoComidaChange}
                 >
+                  <option value="seleccione">Seleccione</option>
                   <option value="esencial">Esencial</option>
                   <option value="completo">Completo</option>
                   <option value="gourmet">Gourmet</option>
